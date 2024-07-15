@@ -267,6 +267,24 @@ const Homepage = () => {
                                     <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
                                         financial processes, and grow revenue. No more panic.</p>
                                 </div>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Close to The Metal</h5>
+                                    <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                        financial processes, and grow revenue. No more panic.</p>
+                                </div>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Close to The Metal</h5>
+                                    <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                        financial processes, and grow revenue. No more panic.</p>
+                                </div>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Close to The Metal</h5>
+                                    <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                        financial processes, and grow revenue. No more panic.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
