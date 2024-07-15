@@ -237,39 +237,35 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-            <div className="hero-props-segment-div sec-bg">
+            <div className="hero-company-disp sec-bg mt_5">
                 <div className="cover-div">
-                    <div className="center-div">
-                        <h3>What can you expect to receive from our platform?</h3>
-                    </div>
-                    <div>
-                        <div className="circle-flex">
-                            <div className="circle-div _1">
-                                <div>
-                                    <h3>40%</h3>
-                                    <h5>Time saving</h5>
-                                    <p>What can you expect to receive from.</p>
-                                </div>
+                    <div className="grid-2-bias">
+                        <div>
+                            <div className="center-div">
+                                <h5 className="top-tag">Global Scale</h5>
+                                <h3>The Backbone for Global <br /> Digital Business.</h3>
+                                <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
+                                    recharged millios of companies.</p>
                             </div>
-                            <div className="circle-div _2">
-                                <div>
-                                    <h3>40%</h3>
-                                    <h5>Time saving</h5>
-                                    <p>What can you expect to receive from.</p>
+                            <div className="grid-3 mt_3">
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Close to The Metal</h5>
+                                    <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                        financial processes, and grow revenue. No more panic.</p>
                                 </div>
-                            </div>
-                            <div className="circle-div _1">
-                                <div>
-                                    <h3>40%</h3>
-                                    <h5>Time saving</h5>
-                                    <p>What can you expect to receive from.</p>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Close to The Metal</h5>
+                                    <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                        financial processes, and grow revenue. No more panic.</p>
                                 </div>
-                            </div>
-                            <div className="circle-div _2">
-                                <div>
-                                    <h3>40%</h3>
-                                    <h5>Time saving</h5>
-                                    <p>What can you expect to receive from.</p>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Close to The Metal</h5>
+                                    <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                        financial processes, and grow revenue. No more panic.</p>
                                 </div>
                             </div>
                         </div>

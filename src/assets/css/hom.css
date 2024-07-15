@@ -1,6 +1,6 @@
 .hero-div {
     /* height: 500px; */
-    padding: 10% 0px 0px;
+    padding: 10% 0px 5%;
     background: #EDEBF0;
     background: #050505;
 }
@@ -422,6 +422,44 @@
 
 
 
+.hero-company-disp p {
+    margin-bottom: 60px;
+    width: 50%;
+    font-size: 1.5rem;
+    color: #d7d4d4;
+}
+
+.hero-company-disp h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.hero-company-disp .block-border {
+    background: #FAFAFA;
+    padding: 20px;
+    border: 2px solid #F3F3F3;
+    border-radius: 16px;
+}
+
+.hero-company-disp .block-border p {
+    width: 100%;
+    margin-bottom: 0px;
+    font-size: 1.4rem;
+    color: #000;
+}
+
+.hero-company-disp .block-border h5 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.hero-company-disp ion-icon {
+    font-size: 5rem;
+    margin-bottom: 30px;
+    color: #0357EE;
+}
+
 @media screen and (max-width: 720px) {
     .grid-2 {
         display: flex;
@@ -448,16 +486,20 @@
         display: grid;
         grid-template-columns: repeat(2, 1fr);
     }
+
     .circle-div {
         width: 200px;
         height: 200px;
     }
+
     .hero-props-main .top-card-tile h2 {
         width: 100%;
     }
+
     .hero-div h2 {
         font-size: 4rem;
     }
+
     .hero-div {
         padding: 30% 0px;
     }

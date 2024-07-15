@@ -243,13 +243,13 @@ p {
 
 .navigation ul {
     display: flex;
-    grid-gap: 50px;
+    grid-gap: 60px;
     align-items: center;
     margin: 0px;
 }
 
 .navigation ul.extra-nav {
-    grid-gap: 20px;
+    grid-gap: 40px;
 }
 
 .navigation ul li {
