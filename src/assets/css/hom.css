@@ -118,6 +118,7 @@
     margin-bottom: 20px;
     color: #F4F4F4;
     width: 70%;
+    width: 100%;
 }
 
 .hero-props-main .grid-2 h3.sec-header {
@@ -132,12 +133,11 @@
 }
 
 .hero-props-main a {
-    border: 2px solid #F1FF9D !important;
-    border: 2px solid var(--blue) !important;
-    padding: 15px 35px;
+    border-bottom: 2px solid var(--blue) !important;
+    padding: 5px 5px;
     font-size: 1.4rem;
-    color: var(--blue) !important;
-    border-radius: 50px;
+    color: #fff !important;
+    border-radius: 0px;
 }
 
 .top-tag {
