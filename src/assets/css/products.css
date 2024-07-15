@@ -1,0 +1,223 @@
+.payments-hero-block {
+    background: #EAF6FC;
+    background: #EDF3F6;
+    height: 550px;
+    width: 100%;
+}
+
+.payments-hero-block .cover-div {
+    height: 100%;
+}
+
+.payments-hero-block .payments-hero {
+    height: 100%;
+    display: flex;
+    align-items: end;
+    align-items: center;
+}
+
+.payments-hero .payment-hero-content {
+    width: 50%;
+    position: absolute;
+}
+
+.payments-hero .payment-hero-content h2 {
+    font-size: 4.2rem;
+    width: 80%;
+    display: block;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+
+
+.payments-hero .payment-hero-content p {
+    font-size: 1.5rem;
+    width: 90%;
+    display: block;
+    margin-bottom: 0px;
+    color: #011b33;
+}
+
+.inner-page-story h3 {
+    font-size: 3.2rem;
+    width: 70%;
+    margin-bottom: 10px;
+}
+
+.inner-page-story p {
+    margin-bottom: 10px;
+}
+
+.inner-page-story ul {
+    column-count: 2;
+    column-gap: 0rem;
+}
+
+.inner-page-story ul li {
+    font-size: 1.5rem;
+    line-height: 3.2;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.inner-page-story ul li ion-icon {
+    font-size: 3rem;
+}
+
+.long-img-cover {
+    height: 40rem;
+    background: #011b33;
+}
+
+.img-div {
+    background: #EAF6FC;
+    height: 100%;
+    width: 100%;
+    border-radius: 4px;
+}
+
+.inner-page-story .grid-2 {
+    grid-gap: 40px;
+}
+
+
+/* contact */
+.contact-hero-block {
+    background: #EAF6FC;
+    background: #EDF3F6;
+    background: #011B33;
+    background: #C5DBF2;
+    height: 500px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-hero-block .contact-message-intro {
+    text-align: center;
+    margin-bottom: 6%;
+    width: 100%;
+    /* padding-top: 40%; */
+}
+
+.contact-hero-block .contact-message-intro p {
+    font-size: 1.6rem;
+    /* color: #fff; */
+}
+
+.contact-hero-block .contact-message-intro h2 {
+    font-size: 3.5rem;
+    margin-bottom: 20px;
+    /* color: #fff; */
+}
+
+.contact-hero-block form {
+    background: #fff;
+    padding: 60px 60px;
+    border-radius: 16px;
+    box-shadow: 17px 17px 200px rgba(64, 69, 79, .06);
+}
+
+.contact-hero-block .contact-message {
+    margin-bottom: -40%;
+    width: 60%;
+}
+
+.contact-hero-block form button {
+    border-radius: 8px;
+    padding: 20px 35px;
+    width: 40%;
+    text-align: center;
+    display: block;
+}
+
+.contact .form-extra {
+    height: 45rem;
+}
+
+.contact .white-info-bg {
+    background: #fff;
+    padding: 60px 60px;
+    border-radius: 16px;
+    box-shadow: 17px 17px 200px rgba(64, 69, 79, .06);
+    text-align: center;
+}
+
+.contact .white-info-bg .icon-box {
+    background: #3362B0;
+    padding: 20px 30px;
+    width: max-content;
+    border-radius: 12px;
+    margin: 0px auto;
+    display: block;
+    margin-bottom: 30px;
+}
+
+.contact .white-info-bg h4 {
+    font-size: 1.8rem;
+    margin-bottom: 10px;
+}
+
+.contact .white-info-bg p {
+    font-size: 1.6rem;
+}
+
+.contact .contact-hero-block .contact-message .grid-2 {
+    grid-gap: 50px;
+}
+
+.contact .white-info-bg .icon-box ion-icon {
+    color: #fff;
+    font-size: 3rem;
+}
+
+input {
+    height: 5.5rem;
+    width: 100%;
+    display: block;
+    background: transparent !important;
+    font-size: 1.3rem;
+}
+
+textarea {
+    background: transparent !important;
+}
+
+label {
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+}
+
+.form_group {
+    margin-bottom: 20px;
+    width: 100%;
+}
+
+.flex-form {
+    display: flex;
+    grid-gap: 10px;
+    width: 100%;
+}
+
+
+
+/* abt-img */
+.abt-img {
+    background: #999791;
+    height: 40rem;
+    width: 100%;
+}
+
+.abt-content {
+    width: 60%;
+    margin: 0px auto;
+    display: block;
+    margin-top: 12%;
+}
+
+.about .contact-hero-block .contact-message {
+    margin-bottom: -20%;
+}

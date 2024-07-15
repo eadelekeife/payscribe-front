@@ -1,0 +1,124 @@
+.date {
+    border: 2px solid #D9D9D9;
+    padding: 10px 15px;
+    border-radius: 50px;
+}
+
+.date h5 {
+    color: #000 !important;
+    margin-bottom: 0px !important;
+}
+
+.expense-flow {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+    grid-gap: 10px;
+}
+
+.expense-flow .flow-bar {
+    height: 10px;
+    border-radius: 50px;
+    background: rgb(3, 3, 3);
+}
+
+.expense-flow .flow-bar.green {
+    background: #2EE778;
+}
+
+.expense-flow .flow-bar.lemon {
+    background: #D5FD3A;
+}
+
+.expense-list .single-expense {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #FAFAFA;
+    margin-top: 20px;
+}
+
+.expense-list .single-expense .bar {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(3, 3, 3);
+}
+
+.expense-list .single-expense .flex-div {
+    display: flex;
+    align-items: center;
+    grid-gap: 10px;
+}
+
+.expense-list .single-expense h4 {
+    margin-bottom: 0px !important;
+    font-size: 1.5rem;
+    color: #000 !important;
+}
+
+.tracker h4.tile-header {
+    font-size: 1.5rem;
+    color: #000 !important;
+}
+
+.tracker .grid-flex {
+    align-items: center;
+}
+
+.expense-list .single-expense .currency {
+    font-size: 1.2rem;
+}
+
+.tracker {
+    padding: 10px;
+}
+
+
+.tracker-div .card-header {
+    background: #FAFAFA;
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 10px;
+    border-radius: 12px;
+    align-items: center;
+}
+
+.tracker-div .card-header .card-header-single h4 {
+    color: #000;
+    font-size: 1.4rem;
+    text-align: center;
+    margin-bottom: 0px;
+}
+
+.tracker-div .card-header .card-header-single.active {
+    background: #000000;
+    padding: 15px 25px;
+    border-radius: 12px;
+}
+
+.tracker-div .card-header .card-header-single.active h4 {
+    color: #fff;
+}
+
+.tracker-div .card-body .data-tag {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background: #30E278;
+}
+
+.tracker-div .card-body .single-data {
+    display: flex;
+    justify-content: space-between;
+}
+
+.tracker-div .card-body .single-data img {
+    display: none;
+}
+
+.tracker-div .card-body .single-data .flex-div {
+    grid-gap: 30px;
+}
+
+/*  906AFF */

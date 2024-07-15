@@ -1,0 +1,149 @@
+.hero-div {
+    /* height: 500px; */
+    padding: 10% 0px 5%;
+}
+
+.hero-div h2 {
+    font-size: 6.5rem;
+    margin-bottom: 30px;
+    line-height: 1;
+}
+
+.hero-div .grid-2 {
+    align-items: center;
+}
+
+.hero-div p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+}
+
+.companies-box .companies {
+    display: flex;
+    flex-wrap: wrap;
+    grid-gap: 30px;
+}
+
+.companies-box img {
+    width: auto;
+    height: 2rem;
+}
+
+.companies-box {
+    margin-top: 50px;
+}
+
+
+/* blk-bg */
+.blk-bg {
+    padding: 5% 0px;
+    background: #000000;
+}
+
+.center-div {
+    text-align: center;
+}
+
+.center-div p {
+    width: 50%;
+    margin: 0px auto;
+    display: block;
+    color: #fff;
+}
+
+.center-div h3 {
+    font-size: 4rem;
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.blk-bg p {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.blk-bg h2 {
+    font-size: 3.5rem;
+    color: #fff;
+    text-align: center;
+}
+
+.blk-bg .center-div {
+    margin-bottom: 50px;
+}
+
+
+
+/*  */
+
+.hero-props-main .hero-block-main {
+    background: #FAFAFA;
+    border: 3px solid #F4F4F4;
+    padding: 30px;
+    border-radius: 16px;
+}
+
+.hero-block-main img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: top;
+}
+
+.hero-props-main .grid-2 h3 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero-props-main .grid-2 p {
+    margin-bottom: 40px;
+    color: #777777;
+}
+
+.hero-props-main .grid-2 a {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    display: block;
+    width: max-content;
+    color: #000;
+    text-decoration: none;
+    border-bottom: 3px solid #000;
+}
+
+.hero-props-main .grid-2 a {
+    font-size: 1.4rem;
+}
+
+.hero-props-main .img-box {
+    height: 30rem;
+}
+
+
+.hero-props-main .hero-block-main.main-story .img-box {
+    height: 40rem;
+}
+
+.hero-props-main .hero-block-main.main-story .inner-grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+}
+
+
+
+/* hero-props-main */
+.hero-props-main .top-card-tile p {
+    font-size: 1.5rem;
+    color: #000;
+}
+
+.hero-props-main .top-card-tile h2 {
+    font-size: 4rem;
+    color: #000;
+    width: 40%;
+    margin: 0px auto;
+    display: block;
+    margin-bottom: 10px;
+}
