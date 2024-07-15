@@ -67,7 +67,7 @@ const Homepage = () => {
                     </div>
                 </div>
             </div>
-            <div className="mt_5 company-list">
+            {/* <div className="mt_5 company-list">
                 <div className="companies">
                     <img src={_1} alt="" />
                     <img src={_2} alt="" />
@@ -75,7 +75,7 @@ const Homepage = () => {
                     <img src={_4} alt="" />
                     <img src={_1} alt="" />
                 </div>
-            </div>
+            </div> */}
             {/* <div className="contain">
                 <div className="hero-sec-story">
                     <div className="contain">
