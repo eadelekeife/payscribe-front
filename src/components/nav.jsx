@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 import Logo from "../assets/images/payscribe.png";
+import { Dropdown } from "antd";
 // import Logo from "../assets/images/logo.png";
 
 const Navigation = props => {
@@ -19,6 +20,130 @@ const Navigation = props => {
         })
     }, [])
 
+    const businessItems = [
+        {
+            key: "1",
+            label: (
+                <Link to="/">
+                    Why Payscribe
+                </Link>
+            )
+        },
+        {
+            key: "2",
+            label: (
+                <Link to="/">
+                    How It Works
+                </Link>
+            )
+        }
+    ];
+
+    const solutionItems = [
+        {
+            key: '1',
+            label: (
+                <Link to="/">
+                    Sell Giftcards
+                </Link>
+            ),
+        },
+        {
+            key: '2',
+            label: (
+                <Link to="/">
+                    Virtual Dollar (coming soon)
+                </Link>
+            ),
+        },
+        {
+            key: '3',
+            label: (
+                <Link to="/">
+                    Airtime to Cash
+                </Link>
+            ),
+        },
+        {
+            key: '4',
+            label: (
+                <Link to="/">
+                    Save and Earn
+                </Link>
+            ),
+        },
+        {
+            key: '5',
+            label: (
+                <Link to="/">
+                    Events
+                </Link>
+            ),
+        }
+        // {
+        //     key: '6',
+        //     label: (
+        //         <Link to="/">
+        //             Why Payscribe
+        //         </Link>
+        //     ),
+        // },
+        // {
+        //     key: '7',
+        //     label: (
+        //         <Link to="/">
+        //             How It Works
+        //         </Link>
+        //     ),
+        // }
+    ];
+
+    const developerItems = [
+        {
+            key: '1',
+            label: (
+                <Link to="/">
+                    Overview
+                </Link>
+            ),
+        },
+        {
+            key: '2',
+            label: (
+                <Link to="/">
+                    API Documentation
+                </Link>
+            ),
+        }
+    ];
+
+    const companyItems = [
+        {
+            key: '1',
+            label: (
+                <Link to="/">
+                    About
+                </Link>
+            ),
+        },
+        {
+            key: '2',
+            label: (
+                <Link to="/">
+                    Contact Us
+                </Link>
+            ),
+        },
+        {
+            key: '2',
+            label: (
+                <Link to="3">
+                    Frequently Asked Questions
+                </Link>
+            ),
+        }
+    ];
+
     return (
         <div className={`navigation ${fixedNav ? 'fixed' : ''} ${props?.pageFixedNav ? 'fixed' : ''}`}>
             <div className="nav-box">
@@ -32,19 +157,43 @@ const Navigation = props => {
                     <div className="desktop-only">
                         <ul>
                             <li>
-                                <Link to="">Home</Link>
+                                <Link to="/">Home</Link>
                             </li>
                             <li>
-                                <Link to="">Products</Link>
+                                <Dropdown
+                                    menu={{
+                                        items: solutionItems,
+                                    }}
+                                >
+                                    <Link to="/">Products</Link>
+                                </Dropdown>
                             </li>
                             <li>
-                                <Link to="">Solutions</Link>
+                                <Dropdown
+                                    menu={{
+                                        items: businessItems
+                                    }}
+                                >
+                                    <Link to="/">For Businesses</Link>
+                                </Dropdown>
                             </li>
                             <li>
-                                <Link to="">Developers</Link>
+                                <Dropdown
+                                    menu={{
+                                        items: developerItems,
+                                    }}
+                                >
+                                    <Link to="/">For Developers</Link>
+                                </Dropdown>
                             </li>
                             <li>
-                                <Link to="">Resources</Link>
+                                <Dropdown
+                                    menu={{
+                                        items: companyItems,
+                                    }}
+                                >
+                                    <Link to="/">Companies</Link>
+                                </Dropdown>
                             </li>
                         </ul>
                     </div>

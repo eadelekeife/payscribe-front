@@ -1,6 +1,6 @@
 .hero-div {
     /* height: 500px; */
-    padding: 10% 0px 5%;
+    padding: 5% 0px 5%;
     background: #EDEBF0;
     background: #050505;
 }
@@ -11,9 +11,9 @@
 }
 
 .hero-div h2 {
-    font-size: 6rem;
-    margin-bottom: 40px;
-    line-height: 1;
+    font-size: 5.2rem;
+    margin-bottom: 20px;
+    line-height: 1.2;
     color: #FFFFFF;
 }
 
@@ -32,6 +32,15 @@
     margin-bottom: 70px;
     display: block;
     font-size: 1.5rem;
+}
+
+.hero-div img.hero-img {
+    width: 60%;
+    height: auto;
+    margin: 0px auto;
+    display: block;
+    transform: rotate(-30deg);
+    margin-top: -5%;
 }
 
 .companies-box .companies {

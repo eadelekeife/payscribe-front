@@ -69,6 +69,7 @@ p {
 
 .cover-div {
     padding: 0px 8%;
+    padding: 0px 5%;
 }
 
 /* layout */
@@ -555,6 +556,17 @@ p {
     display: none !important;
 }
 
+.ant-dropdown-menu .ant-dropdown-menu-item {
+    line-height: 3.2 !important;
+}
+
+.ant-dropdown-menu {
+    background: #050505 !important;
+}
+
+.ant-dropdown-menu .ant-dropdown-menu-item a {
+    color: rgb(253, 253, 253) !important;
+}
 
 @media screen and (max-width: 720px) {
     .cover-div {

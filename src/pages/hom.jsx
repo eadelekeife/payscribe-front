@@ -18,7 +18,7 @@ import _2 from "../assets/images/payscribe/_2.svg";
 import _3 from "../assets/images/payscribe/_3.svg";
 import _4 from "../assets/images/payscribe/_4.svg";
 
-import HeroImg from "../assets/images/payscribe/hero.png";
+import HeroImg from "../assets/images/hero.svg";
 
 import { Link } from "react-router-dom";
 import { Rate } from "antd";
@@ -61,7 +61,7 @@ const Homepage = () => (
                         </div>
                     </div>
                     <div>
-                        {/* <img src={HeroImg} alt="" /> */}
+                        <img src={HeroImg} className="hero-img" alt="" />
                     </div>
                 </div>
             </div>
@@ -132,10 +132,9 @@ const Homepage = () => (
                 </div>
             </div>
         </div> */}
-        <div className="hero-props-main mt_5">
+        <div className="hero-props-main">
             <div className="cover-div">
                 <div className="top-card-tile center-div">
-                    <h5 className="top-tag">Features</h5>
                     <h2>Comprehensive and Customizable Financial Services</h2>
                     {/* <h2>Flexible and Programmable Financial Primitives</h2> */}
                     {/* <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
