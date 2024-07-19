@@ -114,7 +114,12 @@ const Footer = props => {
                 </div>
                 <div className="grid-flex mt_2">
                     <div>
-                        <p>Plot 7A, Block 4, <br /> Admirality Road, <br />Lekki Phase 1, Lagos State.</p>
+                        <div className="desktop-only">
+                            <p>Plot 7A, Block 4, <br /> Admirality Road, <br />Lekki Phase 1, Lagos State.</p>
+                        </div>
+                        <div className="mobile-only">
+                            <p>Plot 7A, Block 4, Admirality Road,Lekki Phase 1, Lagos State.</p>
+                        </div>
                     </div>
                     <div>
                         <div className="social-box">

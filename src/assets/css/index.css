@@ -199,22 +199,22 @@ p {
 
 /* navigation */
 .navigation {
-    top: 0px;
     z-index: 2;
     width: calc(100% - 10%);
     padding: 10px 5%;
-    position: fixed;
-    background: #033120;
+    position: relative;
     background: transparent;
-    background: #EDF3F2;
-    background: #0F2028;
-    background: transparent;
+    height: max-content;
+    display: block;
     /* background: rgba(255, 255, 255, 0.8); */
+    transition: position .5s ease-in-out;
 }
 
 .navigation.fixed {
     background: #fff;
     background: #050505;
+    position: fixed;
+    top: 0px;
 }
 
 .navigation .logo {
@@ -383,7 +383,7 @@ p {
 
 .footer .grid-4-bias {
     display: grid;
-    grid-template-columns: 2fr 2fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
 }
 
@@ -568,6 +568,18 @@ p {
     color: rgb(253, 253, 253) !important;
 }
 
+.ant-drawer-header {
+    display: none !important;
+}
+
+.paymentModal .ant-modal-close {
+    display: none;
+}
+
+.ant-drawer-body {
+    padding: 0px !important;
+}
+
 @media screen and (max-width: 720px) {
     .cover-div {
         padding: 0px 2%;
@@ -579,5 +591,82 @@ p {
 
     .mobile-only {
         display: block !important;
+    }
+
+    .footer {
+        padding: 15% 0px;
+    }
+
+    .footer .grid-4-bias {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 60px;
+        margin-bottom: 60px;
+    }
+
+    .grid-flex {
+        display: flex;
+        flex-direction: column;
+        grid-gap: 30px;
+        align-items: unset;
+    }
+
+    .footer .footer-form {
+        width: 100%;
+    }
+
+    .footer .aside p {
+        font-size: 1.2rem;
+    }
+
+    .ant-drawer-content-wrapper {
+        width: 100% !important;
+    }
+
+    .nav-drawer .ant-drawer-body ul li a {
+        color: #eff0f6;
+        color: #111;
+        color: rgb(253, 253, 253);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: "Nunito Sans", sans-serif;
+    }
+
+    .nav-drawer ul li {
+        border-bottom: 0.1px solid #b3b3b3;
+        line-height: 2.2;
+        list-style: none;
+        margin-bottom: 15px;
+        padding-bottom: 0px;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-decoration: none;
+    }
+
+    .nav-drawer ul li a {
+        text-decoration: none;
+    }
+
+    .nav-drawer .ant-drawer-body {
+        background: #000;
+        background: #F5FCFF;
+        background: #050505;
+    }
+
+    .drawer-nav-block {
+        align-items: center;
+        border-bottom: 0.1px solid #b3b3b3;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 30px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-top: 20px;
+    }
+
+    .nav-drawer ul li a {
+        color: rgb(253, 253, 253);
     }
 }

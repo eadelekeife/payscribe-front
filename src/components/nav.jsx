@@ -1,8 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import Logo from "../assets/images/payscribe.png";
-import { Dropdown } from "antd";
+import { Drawer, Dropdown } from "antd";
+
+import MenuIcon from "../assets/images/icons/menu.svg";
+import Cancel from "../assets/images/icons/x.svg";
+import CancelWhite from "../assets/images/icons/x-white.svg";
+import AppRoutes from "../utils/routes";
 // import Logo from "../assets/images/logo.png";
 
 const Navigation = props => {
@@ -19,6 +24,8 @@ const Navigation = props => {
             }
         })
     }, [])
+
+    const [mobileNavDisplay, setMobileNavDisplay] = useState(false);
 
     const businessItems = [
         {
@@ -144,6 +151,8 @@ const Navigation = props => {
         }
     ];
 
+    const toggleMobileNavDisplay = () => setMobileNavDisplay(!mobileNavDisplay);
+
     return (
         <div className={`navigation ${fixedNav ? 'fixed' : ''} ${props?.pageFixedNav ? 'fixed' : ''}`}>
             <div className="nav-box">
@@ -208,7 +217,71 @@ const Navigation = props => {
                         </li>
                     </ul>
                 </div>
+                <div className="mobile-only">
+                    <div onClick={toggleMobileNavDisplay}>
+                        <img src={MenuIcon} alt="menu" />
+                    </div>
+                </div>
             </div>
+            <Drawer footer={null} className="nav-drawer" onClose={toggleMobileNavDisplay} open={mobileNavDisplay}>
+                <div className="drawer-nav-block">
+                    <div>
+                    </div>
+                    <div>
+                        <div className="nav-control">
+                            <img onClick={toggleMobileNavDisplay} src={CancelWhite} alt="Cancel" />
+                        </div>
+                    </div>
+                </div>
+                <div>
+                    <ul className="mobile-nav">
+                        <li className="mobile-nav-list">
+                            <NavLink className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleMobileNavDisplay}
+                                to="/">Home</NavLink>
+                        </li>
+                        <li className="mobile-nav-list">
+                            <NavLink className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleMobileNavDisplay}
+                                to={AppRoutes.home}>Products</NavLink>
+                        </li>
+                        <li className="mobile-nav-list">
+                            <NavLink className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleMobileNavDisplay}
+                                to={AppRoutes.home}>For Businesses</NavLink>
+                        </li>
+                        <li className="mobile-nav-list">
+                            <NavLink className={({ isActive }) => isActive ? 'active' : ''} onClick={toggleMobileNavDisplay}
+                                to={AppRoutes.home}>Gallery</NavLink>
+                        </li>
+                        <li className="mobile-nav-list">
+                            <NavLink onClick={e => {
+                                toggleMobileNavDisplay();
+                                e.preventDefault();
+                            }} className={({ isActive }) => isActive ? 'active' : ''}
+                                to={AppRoutes.home}>For Developers</NavLink>
+                        </li>
+                        <li className="mobile-nav-list">
+                            <NavLink onClick={e => {
+                                toggleMobileNavDisplay();
+                                e.preventDefault();
+                            }} className={({ isActive }) => isActive ? 'active' : ''}
+                                to={AppRoutes.home}>Companies</NavLink>
+                        </li>
+                        <li className="mobile-nav-list">
+                            <NavLink onClick={e => {
+                                toggleMobileNavDisplay();
+                                e.preventDefault();
+                            }} className={({ isActive }) => isActive ? 'active' : ''}
+                                to={AppRoutes.home}>Sign In</NavLink>
+                        </li>
+                        <li className="mobile-nav-list">
+                            <NavLink onClick={e => {
+                                toggleMobileNavDisplay();
+                                e.preventDefault();
+                            }} className={({ isActive }) => isActive ? 'active' : ''}
+                                to={AppRoutes.home}>Open a Free Account</NavLink>
+                        </li>
+                    </ul>
+                </div>
+            </Drawer>
         </div>
     )
 }

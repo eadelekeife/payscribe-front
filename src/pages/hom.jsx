@@ -6,17 +6,18 @@ import Footer from "../components/footer";
 
 import ArrowRightMain from "../assets/images/arrow-up-right.svg";
 import ArrowRightGrayMain from "../assets/images/arrow-up-right-gray.svg";
-import GlobeImg from "../assets/images/globe.png";
-
-import Img1 from "../assets/images/payscribe/_1.png";
-import Img2 from "../assets/images/payscribe/_2.png";
-import Img3 from "../assets/images/payscribe/_3.png";
-import Img4 from "../assets/images/payscribe/_4.png";
 
 import _1 from "../assets/images/payscribe/_1.svg";
 import _2 from "../assets/images/payscribe/_2.svg";
 import _3 from "../assets/images/payscribe/_3.svg";
 import _4 from "../assets/images/payscribe/_4.svg";
+
+import 'swiper/css';
+import { Swiper, SwiperSlide, useSwiper } from 'swiper/react';
+
+import FinancialImg from "../assets/images/homepage/financial.svg";
+import EnableImg from "../assets/images/homepage/enabling.svg";
+import InvoicingImg from "../assets/images/homepage/invoicing.svg";
 
 import HeroImg from "../assets/images/hero.svg";
 
@@ -142,7 +143,7 @@ const Homepage = () => (
             millios of companies.</p> */}
                 </div>
                 <div className="grid- mt_3">
-                    <div className="hero-block-main">
+                    <div className="hero-block-main payments-cover">
                         <div className="grid-2">
                             <div>
                                 <h5 className="top-tag">More than payments</h5>
@@ -156,6 +157,7 @@ const Homepage = () => (
                                 <Link to=''>Learn More</Link>
                             </div>
                             <div className="img-box">
+                                <img src={EnableImg} alt="Enabling companies to create groundbreaking financial services and solutions" />
                             </div>
                         </div>
                     </div>
@@ -167,6 +169,7 @@ const Homepage = () => (
                             it easier for freelancers and local business owners to create accurate invoices and receive payments on time
                             without any hassle.</p>
                         <div className="img-box">
+                            <img src={InvoicingImg} alt="Invoicing and Payment Solutions" />
                         </div>
                     </div>
                     <div className="hero-block-main">
@@ -174,6 +177,7 @@ const Homepage = () => (
                         <p>Take charge of your finances with our user-friendly mobile solutions, providing you with real-time
                             insights, secure transactions, and effortless management of your financial activities, all from the convenience of your pocket.</p>
                         <div className="img-box">
+                            <img src={FinancialImg} alt="Financial Control in your Pocket" />
                         </div>
                     </div>
                 </div>
@@ -255,55 +259,114 @@ const Homepage = () => (
                                 without compromising compliance, allowing you to focus on creativity and business growth with complete confidence
                                 and peace of mind.</p>
                         </div>
-                        <div className="grid-3 mt_3">
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Easy Integration</h5>
-                                <p>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
-                                    our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                        <div className="desktop-only">
+                            <div className="grid-3 mt_3">
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Easy Integration</h5>
+                                    <p>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
+                                        our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                </div>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Build and launch faster</h5>
+                                    <p>By leveraging our tools and resources, users can accelerate their product development cycles and swiftly bring
+                                        their innovations to market. This advantage enables our customers to stay competitive.</p>
+                                </div>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Comprehensive Solutions</h5>
+                                    <p>Our offerings span a wide range of functionalities, from core services to advanced features, ensuring
+                                        that users have access to a complete suite of tools necessary to address various challenges and requirements.</p>
+                                </div>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Responsive Support</h5>
+                                    <p>Our support team is readily available to address inquiries, provide assistance, and offer
+                                        guidance whenever needed. We prioritize quick response times to ensure
+                                        that our users receive the support they require.</p>
+                                </div>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>User-Friendly Interface</h5>
+                                    <p>Our interface is intuitively structured and straightforward, facilitating seamless navigation and interaction
+                                        with features. It ensures that users can efficiently perform tasks with minimal effort
+                                        and without extensive training.</p>
+                                </div>
+                                <div className="block-border">
+                                    <ion-icon name="calendar-outline"></ion-icon>
+                                    <h5>Cost-Effective</h5>
+                                    <p>By delivering efficient and scalable solutions, we help organizations achieve their objectives while staying
+                                        within budget, making it a smart financial choice for long-term growth and sustainability.</p>
+                                </div>
                             </div>
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Build and launch faster</h5>
-                                <p>By leveraging our tools and resources, users can accelerate their product development cycles and swiftly bring
-                                    their innovations to market. This advantage enables our customers to stay competitive.</p>
-                            </div>
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Comprehensive Solutions</h5>
-                                <p>Our offerings span a wide range of functionalities, from core services to advanced features, ensuring
-                                    that users have access to a complete suite of tools necessary to address various challenges and requirements.</p>
-                            </div>
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Responsive Support</h5>
-                                <p>Our support team is readily available to address inquiries, provide assistance, and offer
-                                    guidance whenever needed. We prioritize quick response times to ensure
-                                    that our users receive the support they require.</p>
-                            </div>
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>User-Friendly Interface</h5>
-                                <p>Our interface is intuitively structured and straightforward, facilitating seamless navigation and interaction
-                                    with features. It ensures that users can efficiently perform tasks with minimal effort
-                                    and without extensive training.</p>
-                            </div>
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Cost-Effective</h5>
-                                <p>By delivering efficient and scalable solutions, we help organizations achieve their objectives while staying 
-                                    within budget, making it a smart financial choice for long-term growth and sustainability.</p>
-                            </div>
+                        </div>
+                        <div className="mobile-only">
+                            <Swiper
+                                centeredSlides={false} margin={10} spaceBetween={10}
+                                slidesPerView={1.2}
+                                loop={true}>
+                                <SwiperSlide key={1}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>Easy Integration</h5>
+                                        <p>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
+                                            our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={2}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>Build and launch faster</h5>
+                                        <p>By leveraging our tools and resources, users can accelerate their product development cycles and swiftly bring
+                                            their innovations to market. This advantage enables our customers to stay competitive.</p>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={3}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>Comprehensive Solutions</h5>
+                                        <p>Our offerings span a wide range of functionalities, from core services to advanced features, ensuring
+                                            that users have access to a complete suite of tools necessary to address various challenges and requirements.</p>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={4}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>Responsive Support</h5>
+                                        <p>Our support team is readily available to address inquiries, provide assistance, and offer
+                                            guidance whenever needed. We prioritize quick response times to ensure
+                                            that our users receive the support they require.</p>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={5}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>User-Friendly Interface</h5>
+                                        <p>Our interface is intuitively structured and straightforward, facilitating seamless navigation and interaction
+                                            with features. It ensures that users can efficiently perform tasks with minimal effort
+                                            and without extensive training.</p>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={6}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>Cost-Effective</h5>
+                                        <p>By delivering efficient and scalable solutions, we help organizations achieve their objectives while staying
+                                            within budget, making it a smart financial choice for long-term growth and sustainability.</p>
+                                    </div>
+                                </SwiperSlide>
+                            </Swiper>
                         </div>
                     </div>
                 </div>
-            </div>
-        </div>
+            </div >
+        </div >
         <div className="hero-props-bottom">
 
         </div>
         <Footer noMargin={true} />
-    </div>
+    </div >
 )
 
 export default Homepage;
