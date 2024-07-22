@@ -9,7 +9,7 @@ const Footer = props => {
     const { control } = useForm({});
     return (
         <div className={`${props.noMargin ? "no-margin" : ""} footer`}>
-            <div className="container">
+            <div className="cover-div">
                 <div className="grid-4-bias">
                     <div className="logo-div">
                         <div className="div-logo">
@@ -115,7 +115,8 @@ const Footer = props => {
                 <div className="grid-flex mt_2">
                     <div>
                         <div className="desktop-only">
-                            <p>Plot 7A, Block 4, <br /> Admirality Road, <br />Lekki Phase 1, Lagos State.</p>
+                            <p>95 Oreta Road Tipper Garage. Ikorodu. Lagos State</p>
+                            {/* <p>Plot 7A, Block 4, <br /> Admirality Road, <br />Lekki Phase 1, Lagos State.</p> */}
                         </div>
                         <div className="mobile-only">
                             <p>Plot 7A, Block 4, Admirality Road,Lekki Phase 1, Lagos State.</p>
@@ -156,7 +157,7 @@ const Footer = props => {
                         </div>
                     </div> */}
                 </div>
-                <div className="footer-line"></div>
+                {/* <div className="footer-line"></div>
                 <div className="aside">
                     <p>Payscribe Digital Sevices Ltd (Payscribe) is a financial technology company not a bank.
                         The account number is a virtual bank account number in line with the Nigeria Uniform Bank Account Number (NUBAN) formating
@@ -165,7 +166,7 @@ const Footer = props => {
                         the products and services offered by Payscribe. By using this website, you accept our Privacy Policy and Terms of Use.
                         Google Play and the Google Play logo are trademarks of Google LLC. Apple, the Apple logo, and iPhone are trademarks of
                         Apple Inc. registered in the U.S.</p>
-                </div>
+                </div> */}
                 {/* <div className="grid-flex">
                     <div>
                         <p>Payscribe &copy; 2024. All rights reserved </p>

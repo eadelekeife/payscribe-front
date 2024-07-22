@@ -1,6 +1,6 @@
 import "../assets/css/homepage.css";
 
-import React from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 
 import Navigation from "../components/nav";
 import { Link } from "react-router-dom";
@@ -22,6 +22,8 @@ import Img2 from "../assets/images/payscribe/_2.png";
 import Img3 from "../assets/images/payscribe/_3.png";
 import Img4 from "../assets/images/payscribe/_4.png";
 
+import WomanImg from "../assets/images/friends.jpg";
+
 
 import _1 from "../assets/images/payscribe/_1.svg";
 import _2 from "../assets/images/payscribe/_2.svg";
@@ -30,9 +32,19 @@ import _4 from "../assets/images/payscribe/_4.svg";
 
 import _5 from "../assets/images/payscribe/jjd.webp";
 
+import PhoneImg from "../assets/images/phone.png";
+
 import TrackExpense from "../components/track/track";
 
+import NoiseImg from "../assets/images/noise.jpg";
+
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 const Homepage = () => {
+
+    const textRef = useRef([]);
+
     const SwiperButtonPrev = ({ children }) => {
         const swiper = useSwiper();
         return <button className="carousel-controller" onClick={() => swiper.slideNext()}>{children}</button>;
@@ -42,373 +54,386 @@ const Homepage = () => {
         const swiper = useSwiper();
         return <button className="carousel-controller" onClick={() => swiper.slidePrev()}>{children}</button>;
     };
+
+    gsap.registerPlugin(ScrollTrigger);
+
+    useEffect(() => {
+        textRef.current.map(elem => {
+
+            // var childSplit = new SplitText(elem, {
+            //     type: "lines",
+            //     linesClass: "split-child"
+            // });
+            // var parentSplit = new SplitText(elem, {
+            //     type: "lines",
+            //     linesClass: "split-parent"
+            // });
+
+            let tl = gsap.timeline({
+                scrollTrigger: {
+                    trigger: elem,
+                    // start: "top center+=150",
+                    // end: "top 50%",
+                    // scrub: 1,
+                    // markers: true,
+                }
+            });
+            tl.fromTo(
+                elem,
+                {
+                    y: 30,
+                    autoAlpha: 0,
+                    opacity: 0
+                },
+                {
+                    y: 0,
+                    autoAlpha: 1,
+                    duration: .8,
+                    stagger: 0.3,
+                    opacity: 1
+                }
+            );
+        })
+    }, [])
+
+    // const sections = gsap.utils.toArray()
+
+    const pushElementToRef = ele => {
+        textRef.current.push(ele);
+    }
+
     return (
         <div className="homepage">
             <Navigation />
-            {/* <div className="homepage-her">
-                <div className="cover-div">
-                    <div className="grid-2">
-                        <div>
-                            <h2>One Solution for<br />  streamlining your business.</h2>
-                            <div className="mt_1">
-                                <p>Millios of companies of all sizes use Payscribe online  and in person to accept payments, send payouts, automate financial
-                                    processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously recharged.
-                                </p>
-                            </div>
-                            <div className="button-flex mt_3">
-                                <Link className="btn btn-main" to="/">Open a Free Account <img src={ArrowRightMain} alt="arrow right" /></Link>
-                                <Link className="btn btn-white" to="/">Reach out to us <img src={ArrowRightMain} alt="arrow right" /></Link>
-                            </div>
-                            <div className="companies-box">
-                                <p>Trusted by over 20,000 businesses</p>
-                                <div className="companies">
-                                    <img src={_1} alt="" />
-                                    <img src={_2} alt="" />
-                                    <img src={_3} alt="" />
-                                    <img src={_4} alt="" />
-                                </div>
-                            </div>
-                        </div>
-                        <div className="hero-img">
-                            <div>
-                                <div className="grid-3">
-                                    <div></div>
-                                    <div>
-                                        <img src={Img3} alt="" />
-                                    </div>
-                                    <div>
-                                        <img src={Img4} alt="" />
-                                    </div>
-                                </div>
-                                <div className="grid-2">
-                                    <div>
-                                        <img src={Img2} alt="" />
-                                    </div>
-                                    <div>
-                                        <img src={Img1} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-            <div className="homepage-hero">
-                <div className="contain">
-                    <div className="hero-content">
-                        <div>
-                            {/* <h2>The modern finance platform.</h2>
-                            <h2>All your business in one app.</h2> */}
-                            <div className="tag-block-cover">
-                                <h4>SIMPLIFY, SECURE, SUCCEED.</h4>
-                            </div>
-                            <h2>One Solution for<br />  streamlining your business.</h2>
-                            {/* <h2>Pay Lifestyle bills and manage your finances at ease</h2> */}
-                            {/* <h2>Suite of Financial <br /> and Payment <br /> Products</h2> */}
-                            <div className="mt_1">
-                                <p>Millios of companies of all sizes use Payscribe online  and in person to accept payments, send payouts, automate financial
-                                    processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously recharged.
-                                </p>
-                            </div>
-                            <div className="button-flex mt_3">
-                                <Link className="btn btn-main" to="/">Open a Free Account <img src={ArrowRightMain} alt="arrow right" /></Link>
-                                <Link className="btn btn-white" to="/">Reach out to us <img src={ArrowRightMain} alt="arrow right" /></Link>
-                            </div>
-                            <div className="mt_3">
-                                <div className="screenshot-bg">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            {/* <div className="hero-summary">
-                <div>
-                    <h4>The fastest growing companies in Nigeria use Payscribe.</h4>
-                    <div className="flex-div">
-                        <div>
-                            <img src={Logo} alt="logo" />
-                        </div>
-                        <div>
-                            <img src={Logo} alt="logo" />
-                        </div>
-                        <div>
-                            <img src={Logo} alt="logo" />
-                        </div>
-                        <div>
-                            <img src={Logo} alt="logo" />
-                        </div>
-                        <div>
-                            <img src={Logo} alt="logo" />
-                        </div>
-                        <div>
-                            <img src={Logo} alt="logo" />
-                        </div>
-                        <div>
-                            <img src={Logo} alt="logo" />
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-            <div className="hero-company-data">
-                <div className="cover-div">
-                    <div className="flex-div">
-                        <div>
-                            <h4 className="sect-header">Loved by industy leaders <br /> See what our customers are saying.</h4>
-                        </div>
-                        <div>
-                            <div>
-                                <Link to="" className="btn btn-main main">View Our Customer Stories <ion-icon name="arrow-forward-outline"></ion-icon></Link>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="grid-2 mt_2">
-                        <div className="company-prop-list">
-                            <div className="card-btn">
-                                <div className="card-btn-header"></div>
-                                <div className="card-btn-body">
-                                    <div className="card-btn-body">
-                                        <h5>For Businesses</h5>
-                                        <h4>Micro-finance and loan providers.</h4>
-                                        <p>Millios of companies of all sizes use Payscribe online  and in person to accept payments, send payouts, automate financial
-                                            processes, and grow revenue. No more panic. Millios of companies of all sizes use Payscribe online.
+            <div>
+                <div className="homepage-hero">
+                    <div className="cover-div">
+                        <div className="hero-content">
+                            <div className="grid-2 main-grid">
+                                <div>
+                                    <h2 ref={pushElementToRef}>Versatile payment <br /> solutions designed to fit your business needs.</h2>
+                                    <div className="mt_1">
+                                        <p ref={pushElementToRef} className="millions">
+                                            Payscribe offers a robust payment infrastructure enabling businesses to securely accept payments, issue
+                                            USD/NGN cards for seamless cross-border transactions, and provide comprehensive financial services to their customers.
                                         </p>
-                                        <Link to="">See How It Works <ion-icon name="chevron-forward-circle-outline"></ion-icon></Link>
+                                    </div>
+                                    <div className="button-flex mt_3">
+                                        <Link className="btn btn-main" to="/">Open a Free Account <img src={ArrowRightGrayMain} alt="arrow right" /></Link>
+                                        <Link className="btn btn-white" to="/">Reach out to us <img src={ArrowRightMain} alt="arrow right" /></Link>
+                                    </div>
+                                    <div className="companies-box">
+                                        <p ref={pushElementToRef}>Trusted by over 20,000 businesses</p>
+                                        <div className="companies">
+                                            <img src={_1} alt="" />
+                                            <img src={_2} alt="" />
+                                            <img src={_3} alt="" />
+                                            <img src={_4} alt="" />
+                                            <img src={_1} alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <div className="hero-img">
+                                        <div>
+                                            <div className="grid-3">
+                                                <div></div>
+                                                <div>
+                                                    <img src={Img3} alt="" />
+                                                </div>
+                                                <div>
+                                                    <img src={Img4} alt="" />
+                                                </div>
+                                            </div>
+                                            <div className="grid-2">
+                                                <div>
+                                                    <img src={Img2} alt="" />
+                                                </div>
+                                                <div>
+                                                    <img src={Img1} alt="" />
+                                                </div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div className="company-prop-list">
-                            <div className="card-btn">
-                                <div className="card-btn-header"></div>
-                                <div className="card-btn-body">
-                                    <div className="card-btn-body">
-                                        <h5>For Businesses</h5>
-                                        <h4>Micro-finance and loan providers.</h4>
-                                        <p>Millios of companies of all sizes use Payscribe online  and in person to accept payments, send payouts, automate financial
-                                            processes, and grow revenue. No more panic. Millios of companies of all sizes use Payscribe online.
-                                        </p>
-                                        <Link to="">See How It Works <ion-icon name="chevron-forward-circle-outline"></ion-icon></Link>
+                    </div>
+                </div>
+                <div className="hero-props-main mt_5">
+                    <div className="container">
+                        <div className="top-card-tile">
+                            {/* <h5 className="top-tag">What we do</h5> */}
+                            <h2 ref={pushElementToRef}>Flexible and Programmable Financial Primitives</h2>
+                        </div>
+                        <div className="grid-2-bias top">
+                            <div className="hero-block-main main-story _dark">
+                                <img src={NoiseImg} alt="ash image" />
+                                <div className="">
+                                    <div className="inner-grid">
+                                        <div>
+                                            <h5 className="top-tag white">For Businesses</h5>
+                                            <h3>Powering global growth with innovative payment solutions.</h3>
+                                        </div>
+                                        <div>
+                                            <p ref={pushElementToRef}>Powering global growth with innovative payment solutions that simplify
+                                                transactions, reduce costs, and increase financial inclusion.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div className="hero-block-main main-story light">
+                                <img src={NoiseImg} alt="ash image" />
+                                <div className="">
+                                    <div className="inner-grid">
+                                        <div>
+                                            <h5 className="top-tag">For Individuals</h5>
+                                            <h3>Take Control of Your <br /> Finances.</h3>
+                                        </div>
+                                        <div>
+                                            <p ref={pushElementToRef}>Empower your financial future with smart money management. &mdash; Your Money &mdash; Your Control</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-            {/* <div className="hero-company-offers mt_5">
-                <div className="cover-div">
-                    <div className="top-tile">
-                        <h3>Simple, easy payments</h3>
-                        <p>Building a business is hard. Getting paid shouldn't be.</p>
-                    </div>
-                    <div className="grid-2">
-                        <div>
-                            <div className="offer-block"></div>
-                        </div>
-                        <div>
-                            <h3>Delight customers with <br /> a seamless payments <br /> experience.</h3>
-                            <p>Give your customers the gift of modern, frictionless, painless payments. Integrate Paystack once and let your
-                                customers pay you however they want.</p>
-                            <p className="last">We automatically route payments through the most optimal channels, ensuring the
-                                highest transaction success rates in the market.</p>
-                            <ul>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                            </ul>
-                            <Link to=""><ion-icon name="chevron-forward-circle-outline"></ion-icon> Find out how we achieve high success rate</Link>
-                        </div>
-                    </div>
-                    <div className="grid-2 mt_5">
-                        <div>
-                            <h3>Delight customers with <br /> a seamless payments <br /> experience.</h3>
-                            <p>Give your customers the gift of modern, frictionless, painless payments. Integrate Paystack once and let your
-                                customers pay you however they want.</p>
-                            <p className="last">We automatically route payments through the most optimal channels, ensuring the
-                                highest transaction success rates in the market.</p>
-                            <ul>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                                <li><ion-icon name="checkmark-done-circle-outline"></ion-icon> Bank Account</li>
-                            </ul>
-                            <Link to=""><ion-icon name="chevron-forward-circle-outline"></ion-icon> Find out how we achieve high success rate</Link>
-                        </div>
-                        <div>
-                            <div className="offer-block"></div>
-                        </div>
-                    </div>
-                </div>
-            </div> */}
-            <div className="hero-props-main mt_5">
-                <div className="cover-div">
-                    <div className="top-card-tile">
-                        <h5 className="top-tag">Features</h5>
-                        <h2>Flexible and Programmable Financial Primitives</h2>
-                        <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                            financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously recharged
-                            millios of companies.</p>
-                    </div>
-                    <div className="hero-block-main main-story">
-                        <div className="grid-2">
-                            <div className="">
-                                <div className="inner-grid">
-                                    <div>
-                                        <h5 className="top-tag">cards</h5>
-                                        <h3>Programmatically design cards for your businesses.</h3>
-                                    </div>
-                                    <div>
-                                        <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                            financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                            recharged millios of companies.</p>
-                                        <Link to=''>Learn More</Link>
-                                    </div>
+                        <div className="grid-2-bias sec-content mt_3">
+                            <div className="hero-block-main light">
+                                <img src={NoiseImg} alt="ash image" />
+                                <div className="img-box">
                                 </div>
+                                <h5 className="top-tag color">For Freelancers</h5>
+                                <h3>Simplify Your Finances, Amplify Your Success.</h3>
+                                <p ref={pushElementToRef}>Seamlessly track your projects, payments, and expenses, and freeing up time to
+                                    focus on growing your skills.</p>
                             </div>
-                            <div>
-                                <div className="img-box"></div>
-                            </div>
-                        </div>
-                    </div>
-                    <div className="grid-2 mt_3">
-                        <div className="hero-block-main">
-                            <div className="img-box">
-                                <TrackExpense />
-                            </div>
-                            <h5 className="top-tag">cards</h5>
-                            <h3>Programmatically design cards for your businesses.</h3>
-                            <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously recharged millios of companies.</p>
-                            <Link to=''>Learn More</Link>
-                        </div>
-                        <div className="hero-block-main">
-                            <div className="img-box">
-                                <img src={_5} alt="efk" />
-                            </div>
-                            <h5 className="top-tag">cards</h5>
-                            <h3>Programmatically design cards for your businesses.</h3>
-                            <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously recharged millios of companies.</p>
-                            <Link to=''>Learn More</Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div className="hero-company-props mt_5">
-                <div className="cover-div">
-                    <div className="grid-2-bias">
-                        <div>
-                            <h5 className="top-tag">Global Scale</h5>
-                            <h3>The Backbone for Global <br /> Digital Business.</h3>
-                            <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                recharged millios of companies.</p>
-                            <p className="last">Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                recharged millios.</p>
-
-                            <div className="grid-3 mt_3">
-                                <div className="comp-border">
-                                    <h5>100+</h5>
-                                    <p>Best in class platform partners</p>
+                            <div className="hero-block-main _dark">
+                                <img src={NoiseImg} alt="ash image" />
+                                <div className="img-box">
                                 </div>
-                                <div className="comp-border">
-                                    <h5>100+</h5>
-                                    <p>Best in class platform partners</p>
-                                </div>
-                                <div className="comp-border">
-                                    <h5>100+</h5>
-                                    <p>Best in class platform partners</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div>
-                        </div>
-                    </div>
-                </div>
-                <img src={GlobeImg} className="globe" alt="globe img" />
-            </div>
-            <div className="hero-company-disp mt_5">
-                <div className="cover-div">
-                    <div className="grid-2-bias">
-                        <div>
-                            <h5 className="top-tag">Global Scale</h5>
-                            <h3>The Backbone for Global <br /> Digital Business.</h3>
-                            <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                recharged millios of companies.</p>
-
-                            <div className="grid-3 mt_3">
-                                <div className="block-border">
-                                    <ion-icon name="calendar-outline"></ion-icon>
-                                    <h5>Close to The Metal</h5>
-                                    <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                        financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                        recharged millios of companies.</p>
-                                </div>
-                                <div className="block-border">
-                                    <ion-icon name="calendar-outline"></ion-icon>
-                                    <h5>Close to The Metal</h5>
-                                    <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                        financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                        recharged millios of companies.</p>
-                                </div>
-                                <div className="block-border">
-                                    <ion-icon name="calendar-outline"></ion-icon>
-                                    <h5>Close to The Metal</h5>
-                                    <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                        financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                        recharged millios of companies.</p>
-                                </div>
+                                <h5 className="top-tag white">For Your Business</h5>
+                                <h3>Seemless Payment Integration, <br /> Boosted Sales.</h3>
+                                <p ref={pushElementToRef}>Payscribe's payment solutions integrate with your business, enabling fast, secure, and
+                                    hassle-free transactions.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div className="cover-div testimonial mt_5">
-                <div className="hero-company-props">
+                <div className="hero-company-props mt_5">
                     <div className="cover-div">
                         <div className="grid-2-bias">
                             <div>
                                 <h5 className="top-tag">Global Scale</h5>
-                                <h3>Start Building Today</h3>
-                                <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                    recharged millios of companies.</p>
-                                <div className="flex-div">
-                                    <Link className="btn btn-accent" to="">Start Building <img src={ArrowRightMain} alt="arrow right" /></Link>
-                                    <Link className="btn btn-gray-border" to="">Contact Sales <img src={ArrowRightGrayMain} alt="arrow right" /></Link>
+                                <h3>The Backbone for Global <br /> Digital Business.</h3>
+                                <p ref={pushElementToRef}>
+                                    Payscribe offers a comprehensive payment platform that enables businesses of all sizes - from small ventures
+                                    to large corporations - to effortlessly issue white label USD/NGN card, process local and global
+                                    transactions, unlocking new revenue streams and fueling growth.
+                                </p>
+                                <p ref={pushElementToRef}>Enjoy access to a wide range of tools and solutions tailored to
+                                    support you as your entrepreneurship journey.</p>
+
+                                <div className="grid-3 mt_3">
+                                    <div className="comp-border">
+                                        <h5>200+</h5>
+                                        <p ref={pushElementToRef}>Products and Services</p>
+                                    </div>
+                                    <div className="comp-border">
+                                        <h5>100+</h5>
+                                        <p ref={pushElementToRef}>Countries</p>
+                                    </div>
+                                    <div className="comp-border">
+                                        <h5>8</h5>
+                                        <p ref={pushElementToRef}>Payment Options</p>
+                                    </div>
                                 </div>
                             </div>
+                            <div className="company-props-img">
+                            </div>
+                            {/* <div>
                             <div>
+                                <img src={WomanImg} className="woman" alt="globe img" />
+                            </div>
+                        </div> */}
+                        </div>
+                    </div>
+                </div>
+                <div className="hero-company-disp mt_5">
+                    <div className="cover-div">
+                        <div className="grid-2">
+                            <div>
+                                <h3>The Backbone for Global <br /> Digital Business.</h3>
+                            </div>
+                            <div>
+                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
+                                    recharged millios of companies.</p>
+                            </div>
+                        </div>
+                        <div className="mt_">
+                            <Swiper
+                                centeredSlides={false} spaceBetween={50}
+                                slidesPerView={3.2}
+                                loop={false}>
+                                <SwiperSlide key={1}>
+                                    <div className="products-card">
+                                        <div className="products-card-body">
+                                            <h5>Sell Giftcards</h5>
+                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
+                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                        </div>
+                                        <div className="products-card-img">
+
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={2}>
+                                    <div className="products-card">
+                                        <div className="products-card-body">
+                                            <h5>Pay Bills</h5>
+                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
+                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                        </div>
+                                        <div className="products-card-img">
+
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={3}>
+                                    <div className="products-card">
+                                        <div className="products-card-body">
+                                            <h5>Airtime to Cash</h5>
+                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
+                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                        </div>
+                                        <div className="products-card-img _2">
+
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={4}>
+                                    <div className="products-card">
+                                        <div className="products-card-body">
+                                            <h5>Sell Giftcards</h5>
+                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
+                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                        </div>
+                                        <div className="products-card-img">
+
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={5}>
+                                    <div className="products-card">
+                                        <div className="products-card-body">
+                                            <h5>Sell Giftcards</h5>
+                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
+                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                        </div>
+                                        <div className="products-card-img">
+
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={6}>
+                                    <div className="products-card">
+                                        <div className="products-card-body">
+                                            <h5>Sell Giftcards</h5>
+                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
+                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                        </div>
+                                        <div className="products-card-img">
+
+                                        </div>
+                                    </div>
+                                </SwiperSlide>
+                            </Swiper>
+                        </div>
+                    </div>
+                </div>
+                <div className="hero-company-props mt_5">
+                    <div className="cover-div">
+                        <div className="grid-2-bias">
+                            <div>
+                                <h5 className="top-tag">Global Scale</h5>
+                                <h3>The Backbone for Global <br /> Digital Business.</h3>
+                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
+                                    recharged millios of companies.</p>
+                                <p ref={pushElementToRef} className="last">Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
+                                    recharged millios.</p>
+                            </div>
+                            <div className="company-props-img">
+                            </div>
+                            {/* <img src={WomanImg} className="woman" alt="globe img" /> */}
+                        </div>
+                    </div>
+                </div>
+                <div className="hero-company-disp mt_5">
+                    <div className="cover-div">
+                        <div className="grid-2">
+                            <div>
+                                <h3>The Backbone for Global <br /> Digital Business.</h3>
+                            </div>
+                            <div>
+                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
+                                    recharged millios of companies.</p>
+                            </div>
+                        </div>
+                        <div className="grid-3 mt_3">
+                            <div className="block-border">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                <h5>Close to The Metal</h5>
+                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
+                                    recharged millios of companies.</p>
+                            </div>
+                            <div className="block-border">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                <h5>Reliable 24/7 customer support</h5>
+                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
+                                    recharged millios of companies.</p>
+                            </div>
+                            <div className="block-border">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                <h5>Close to The Metal</h5>
+                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
+                                    recharged millios of companies.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div className="cover-div mt_5">
+                    <div className="cover-di">
+                        <div className="join-us">
+                            <div className="cover-div">
+                                <div className="grid-2-bias">
+                                    <div>
+                                        <h5 className="top-tag">Global Scale</h5>
+                                        <h3>Start Building Today</h3>
+                                        <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
+                                            financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
+                                            recharged millios of companies.</p>
+                                        <div className="flex-div">
+                                            <Link className="btn btn-accent" to="">Start Building <img src={ArrowRightMain} alt="arrow right" /></Link>
+                                            <Link className="btn btn-gray-border" to="">Contact Sales <img src={ArrowRightGrayMain} alt="arrow right" /></Link>
+                                        </div>
+                                    </div>
+                                    <div>
+                                        <div className="phone-block">
+                                            <img src={PhoneImg} className="phone" alt="Phone" />
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
-            {/* <div className="last-bar">
-                <div className="cover-div">
-                    <div className="grid-2">
-                        <div>
-                            <h3>ONE SOLUTION FOR STREAMLINING YOUR BUSINESS.</h3>
-                        </div>
-                        <div>
-                            <p>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously recharged millios
-                                of companies of all. Experience the power of work.</p>
-                        </div>
-                    </div>
-                    <div className="mt_5">
-                        <Link className="btn btn-black">Get Started Now <ion-icon name="arrow-forward-outline"></ion-icon></Link>
-                    </div>
-                </div>
-            </div> */}
             <Footer />
         </div >
     )

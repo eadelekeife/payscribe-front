@@ -16,7 +16,7 @@ const Navigation = props => {
     useEffect(() => {
         window.addEventListener('scroll', () => {
             const offset = window.scrollY;
-            if (offset > 200) {
+            if (offset > 5) {
                 setFixed(true);
             }
             else {

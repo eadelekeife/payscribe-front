@@ -27,17 +27,30 @@
     src: url("../fonts/cerebri/Cerebri_Sans_Heavy.woff");
 }
 
+@font-face {
+    font-family: "Nunito Sans Medium";
+    src: url("../fonts/nunito_sans/NunitoSans_7pt-Medium.ttf");
+}
+
+@font-face {
+    font-family: "Nunito Sans Extra Bold";
+    src: url("../fonts/nunito_sans/NunitoSans_7pt-Black.ttf");
+}
+
+
 body,
 html {
     box-sizing: border-box;
     font-family: "Freestyle Font Semi-Bold";
     font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans Medium"; */
     font-weight: normal;
     font-size: 10px;
     overflow-x: hidden;
     max-width: 1800px;
     margin: 0px auto;
     display: block;
+    background: #FFFCF9;
 }
 
 h1,
@@ -49,6 +62,8 @@ h6,
 button {
     font-family: "Freestyle Font Extra-Bold";
     font-family: "Nunito Sans", sans-serif;
+    /* font-family: "Nunito Sans Extra Bold"; */
+    /* font-weight: normal; */
     /* font-weight: 700;
     font-weight: normal; */
     font-weight: 900;
@@ -64,7 +79,7 @@ p {
 }
 
 .container {
-    padding: 0px 5%;
+    padding: 0px 10%;
 }
 
 .cover-div {
@@ -193,7 +208,6 @@ p {
 .btn-accent {
     background: #88F157;
     border: 2px solid #88F157;
-    font-family: "Freestyle Font Semi-Bold";
     color: #000;
 }
 
@@ -206,6 +220,7 @@ p {
     background: transparent;
     height: max-content;
     display: block;
+    background: #000000;
     /* background: rgba(255, 255, 255, 0.8); */
     transition: position .5s ease-in-out;
 }
@@ -434,6 +449,7 @@ p {
     display: grid;
     grid-template-columns: 3fr 1fr;
     border-radius: 50px;
+    border-radius: 8px;
     padding: 3px;
     width: 50rem;
     flex-wrap: nowrap;
@@ -498,7 +514,7 @@ p {
     padding: 20px 30px;
     font-size: 1.3rem;
     font-family: "Freestyle Font Extra-Bold";
-    border-radius: 50px;
+    border-radius: 8px;
 }
 
 .footer .btn-black ion-icon {
@@ -582,7 +598,11 @@ p {
 
 @media screen and (max-width: 720px) {
     .cover-div {
-        padding: 0px 2%;
+        padding: 0px 3%;
+    }
+
+    .container {
+        padding: 0px 3%;
     }
 
     .desktop-only {
@@ -595,6 +615,11 @@ p {
 
     .footer {
         padding: 15% 0px;
+        margin-top: 15%;
+    }
+
+    .mt_5 {
+        margin-top: 15%;
     }
 
     .footer .grid-4-bias {
@@ -621,6 +646,11 @@ p {
 
     .ant-drawer-content-wrapper {
         width: 100% !important;
+    }
+
+    .navigation {
+        padding: 20px 3%;
+        width: calc(100% - 6%);
     }
 
     .nav-drawer .ant-drawer-body ul li a {
@@ -668,5 +698,13 @@ p {
 
     .nav-drawer ul li a {
         color: rgb(253, 253, 253);
+    }
+
+    .btn {
+        padding: 15px 20px;
+        font-size: 1.3rem;
+    }
+    .btn img {
+        display: none;
     }
 }
