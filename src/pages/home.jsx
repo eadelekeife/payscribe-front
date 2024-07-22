@@ -177,7 +177,7 @@ const Homepage = () => {
                                         </div>
                                         <div>
                                             <p ref={pushElementToRef}>Powering global growth with innovative payment solutions that simplify
-                                                transactions, reduce costs, and increase financial inclusion.</p>
+                                                transactions, <br /> reduce costs, and increase financial inclusion.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -191,7 +191,8 @@ const Homepage = () => {
                                             <h3>Take Control of Your <br /> Finances.</h3>
                                         </div>
                                         <div>
-                                            <p ref={pushElementToRef}>Empower your financial future with smart money management. &mdash; Your Money &mdash; Your Control</p>
+                                            <p ref={pushElementToRef}>Enjoy access to a wide range of tools and solutions tailored to
+                                                 support <br /> you as your entrepreneurship journey.</p>
                                         </div>
                                     </div>
                                 </div>
@@ -204,7 +205,7 @@ const Homepage = () => {
                                 </div>
                                 <h5 className="top-tag color">For Freelancers</h5>
                                 <h3>Simplify Your Finances, Amplify Your Success.</h3>
-                                <p ref={pushElementToRef}>Seamlessly track your projects, payments, and expenses, and freeing up time to
+                                <p ref={pushElementToRef}>Seamlessly track your projects, payments, and expenses, and freeing <br /> up time to
                                     focus on growing your skills.</p>
                             </div>
                             <div className="hero-block-main _dark">
@@ -213,7 +214,7 @@ const Homepage = () => {
                                 </div>
                                 <h5 className="top-tag white">For Your Business</h5>
                                 <h3>Seemless Payment Integration, <br /> Boosted Sales.</h3>
-                                <p ref={pushElementToRef}>Payscribe's payment solutions integrate with your business, enabling fast, secure, and
+                                <p ref={pushElementToRef}>Payscribe's payment solutions integrate with your business, enabling fast, secure, <br /> and
                                     hassle-free transactions.</p>
                             </div>
                         </div>
