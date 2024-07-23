@@ -897,19 +897,24 @@ a.main ion-icon {
         flex-direction: column;
     }
 
-    .hero-block-main.main-story {
+    /* .hero-block-main.main-story {
         background: linear-gradient(rgba(0, 0, 0, .3), rgba(0, 0, 0, .3)), url("../images/connect.jpg");
         background-size: cover;
         background-position: center;
         background-size: cover;
-    }
+    } */
 
-    .hero-props-main .grid-2 h3 {
+    .hero-props-main h3 {
         font-size: 2.1rem;
     }
 
+    .hero-block-main._dark,
     .hero-block-main {
-        padding: 30px 10px;
+        padding: 10px;
+    }
+    
+    .hero-block-main h3 {
+
     }
 
     .hero-company-props {
@@ -959,5 +964,23 @@ a.main ion-icon {
 
     .join-us h3 {
         font-size: 2.2rem;
+    }
+
+    .hero-props-main .grid-2-bias {
+        display: flex !important;
+        flex-direction: column;
+    }
+
+    .hero-company-disp .grid-2 {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .hero-block-main .img-box {
+        height: 20rem;
+    }
+
+    .hero-company-props .company-props-img {
+        height: 30rem;
     }
 }

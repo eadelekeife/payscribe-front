@@ -102,6 +102,24 @@ const Homepage = () => {
         textRef.current.push(ele);
     }
 
+    let breakpoints = {
+        // when window width is >= 320px
+        320: {
+            slidesPerView: 1.1,
+            spaceBetween: 20
+        },
+        // when window width is >= 480px
+        480: {
+            slidesPerView: 2.2,
+            spaceBetween: 30
+        },
+        // when window width is >= 640px
+        640: {
+            slidesPerView: 3.2,
+            spaceBetween: 40
+        }
+    }
+
     return (
         <div className="homepage">
             <Navigation />
@@ -176,8 +194,14 @@ const Homepage = () => {
                                             <h3>Powering global growth with innovative payment solutions.</h3>
                                         </div>
                                         <div>
-                                            <p ref={pushElementToRef}>Powering global growth with innovative payment solutions that simplify
-                                                transactions, <br /> reduce costs, and increase financial inclusion.</p>
+                                            <div className="desktop-only">
+                                                <p ref={pushElementToRef}>Powering global growth with innovative payment solutions that simplify
+                                                    transactions, <br /> reduce costs, and increase financial inclusion.</p>
+                                            </div>
+                                            <div className="mobile-only">
+                                                <p ref={pushElementToRef}>Powering global growth with innovative payment solutions that simplify
+                                                    transactions, reduce costs, and increase financial inclusion.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -191,8 +215,14 @@ const Homepage = () => {
                                             <h3>Take Control of Your <br /> Finances.</h3>
                                         </div>
                                         <div>
-                                            <p ref={pushElementToRef}>Enjoy access to a wide range of tools and solutions tailored to
-                                                 support <br /> you as your entrepreneurship journey.</p>
+                                            <div className="desktop-only">
+                                                <p ref={pushElementToRef}>Enjoy access to a wide range of tools and solutions tailored to
+                                                    support <br /> you as your entrepreneurship journey.</p>
+                                            </div>
+                                            <div className="mobile-only">
+                                                <p ref={pushElementToRef}>Enjoy access to a wide range of tools and solutions tailored to
+                                                    support you as your entrepreneurship journey.</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -205,17 +235,34 @@ const Homepage = () => {
                                 </div>
                                 <h5 className="top-tag color">For Freelancers</h5>
                                 <h3>Simplify Your Finances, Amplify Your Success.</h3>
-                                <p ref={pushElementToRef}>Seamlessly track your projects, payments, and expenses, and freeing <br /> up time to
-                                    focus on growing your skills.</p>
+                                <div className="mobile-only">
+                                    <p ref={pushElementToRef}>Seamlessly track your projects, payments, and expenses, and freeing up time to
+                                        focus on growing your skills.</p>
+                                </div>
+                                <div className="desktop-only">
+                                    <p ref={pushElementToRef}>Seamlessly track your projects, payments, and expenses, and freeing <br /> up time to
+                                        focus on growing your skills.</p>
+                                </div>
                             </div>
                             <div className="hero-block-main _dark">
                                 <img src={NoiseImg} alt="ash image" />
                                 <div className="img-box">
                                 </div>
                                 <h5 className="top-tag white">For Your Business</h5>
-                                <h3>Seemless Payment Integration, <br /> Boosted Sales.</h3>
-                                <p ref={pushElementToRef}>Payscribe's payment solutions integrate with your business, enabling fast, secure, <br /> and
-                                    hassle-free transactions.</p>
+                                <div className="desktop-only">
+                                    <h3>Seemless Payment Integration, <br /> Boosted Sales.</h3>
+                                </div>
+                                <div className="mobile-only">
+                                    <h3>Seemless Payment Integration, Boosted Sales.</h3>
+                                </div>
+                                <div className="desktop-only">
+                                    <p ref={pushElementToRef}>Payscribe's payment solutions integrate with your business, enabling fast, secure, <br /> and
+                                        hassle-free transactions.</p>
+                                </div>
+                                <div className="mobile-only">
+                                    <p ref={pushElementToRef}>Payscribe's payment solutions integrate with your business, enabling fast, secure, and
+                                        hassle-free transactions.</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -225,7 +272,12 @@ const Homepage = () => {
                         <div className="grid-2-bias">
                             <div>
                                 <h5 className="top-tag">Global Scale</h5>
-                                <h3>The Backbone for Global <br /> Digital Business.</h3>
+                                <div className="desktop-only">
+                                    <h3>The Backbone for Global <br /> Digital Business.</h3>
+                                </div>
+                                <div className="mobile-only">
+                                    <h3>The Backbone for Global Digital Business.</h3>
+                                </div>
                                 <p ref={pushElementToRef}>
                                     Payscribe offers a comprehensive payment platform that enables businesses of all sizes - from small ventures
                                     to large corporations - to effortlessly issue white label USD/NGN card, process local and global
@@ -262,8 +314,11 @@ const Homepage = () => {
                 <div className="hero-company-disp mt_5">
                     <div className="cover-div">
                         <div className="grid-2">
-                            <div>
-                                <h3>The Backbone for Global <br /> Digital Business.</h3>
+                            <div className="desktop-only">
+                                <h3>Your one-stop <br /> payment partner</h3>
+                            </div>
+                            <div className="mobile-only">
+                                <h3>Your one-stop payment partner</h3>
                             </div>
                             <div>
                                 <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
@@ -273,15 +328,19 @@ const Homepage = () => {
                         </div>
                         <div className="mt_">
                             <Swiper
-                                centeredSlides={false} spaceBetween={50}
-                                slidesPerView={3.2}
-                                loop={false}>
+                                centeredSlides={false}
+                                // spaceBetween={50} slidesPerView={3.2}
+                                loop={false} breakpoints={breakpoints}>
                                 <SwiperSlide key={1}>
                                     <div className="products-card">
                                         <div className="products-card-body">
-                                            <h5>Sell Giftcards</h5>
-                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
-                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                            <h5>Issue USD/NGN Cards</h5>
+                                            {/* <p>his service ensures quick, secure, and efficient transactions, allowing you to manage and reconcile payments with ease. Whether 
+                                                you're collecting payments online, in-person, or through mobile devices, our solution integrates seamlessly with your 
+                                                existing systems.</p> */}
+                                            <p ref={pushElementToRef}>Whether you're making international purchases, paying for local services, or traveling
+                                                abroad, our dual-currency cards provide the flexibility and convenience you need. With competitive exchange rates
+                                                you can enjoy a hassle-free experience, ensuring your financial activities are smooth.</p>
                                         </div>
                                         <div className="products-card-img">
 
@@ -291,9 +350,10 @@ const Homepage = () => {
                                 <SwiperSlide key={2}>
                                     <div className="products-card">
                                         <div className="products-card-body">
-                                            <h5>Pay Bills</h5>
-                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
-                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                            <h5>Payment Collections</h5>
+                                            <p ref={pushElementToRef}>This service ensures quick, secure, and efficient transactions, allowing you to manage and reconcile payments with ease. Whether
+                                                you're collecting payments online, in-person, or through mobile devices, our solution integrates seamlessly with your
+                                                existing systems.</p>
                                         </div>
                                         <div className="products-card-img">
 
@@ -303,9 +363,10 @@ const Homepage = () => {
                                 <SwiperSlide key={3}>
                                     <div className="products-card">
                                         <div className="products-card-body">
-                                            <h5>Airtime to Cash</h5>
-                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
-                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                            <h5>Payment links</h5>
+                                            <p ref={pushElementToRef}>By providing customers with a convenient and straightforward payment option, you can enhance
+                                                your sales process and improve customer satisfaction. Whether you're offering a service or selling products, this service
+                                                makes receiving payments hassle-free and efficient.</p>
                                         </div>
                                         <div className="products-card-img _2">
 
@@ -315,9 +376,10 @@ const Homepage = () => {
                                 <SwiperSlide key={4}>
                                     <div className="products-card">
                                         <div className="products-card-body">
-                                            <h5>Sell Giftcards</h5>
-                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
-                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                            <h5>Payment invoices</h5>
+                                            <p ref={pushElementToRef}>Customize your invoices to reflect your brand, and provide your clients with multiple payment
+                                                options to make the process seamless. This service streamlines the invoicing process for
+                                                businesses and freelancers, ensuring you get paid promptly and accurately.</p>
                                         </div>
                                         <div className="products-card-img">
 
@@ -327,9 +389,10 @@ const Homepage = () => {
                                 <SwiperSlide key={5}>
                                     <div className="products-card">
                                         <div className="products-card-body">
-                                            <h5>Sell Giftcards</h5>
-                                            <p ref={pushElementToRef}>Our streamlined integration process ensures compatibility and smooth connectivity, enabling businesses to adopt
-                                                our solutions effortlessly. This ease of integration enhances operational efficiency for our users.</p>
+                                            <h5>Bills Payment</h5>
+                                            <p ref={pushElementToRef}>Payscribe offers a hassle-free solution for managing and paying your bills. From
+                                                utilities and rent to subscriptions and other recurring expenses, our platform allows you handle all your payments in one place. Simplify
+                                                your financial routine and avoid late fees.</p>
                                         </div>
                                         <div className="products-card-img">
 
@@ -356,14 +419,20 @@ const Homepage = () => {
                     <div className="cover-div">
                         <div className="grid-2-bias">
                             <div>
-                                <h5 className="top-tag">Global Scale</h5>
-                                <h3>The Backbone for Global <br /> Digital Business.</h3>
-                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                    recharged millios of companies.</p>
-                                <p ref={pushElementToRef} className="last">Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                    recharged millios.</p>
+                                <h5 className="top-tag">Easy to Implement</h5>
+                                <div className="desktop-only">
+                                    <h3>Built by developers <br /> for developers</h3>
+                                </div>
+                                <div className="mobile-only">
+                                    <h3>Built by developers for developers</h3>
+                                </div>
+                                <p ref={pushElementToRef}>We've simplified the complexity of integrating multiple services and payment methods, providing a single API to unify your
+                                    financial ecosystem. Now, focus on building a scalable business and gain a competitive advantage in the marketF.</p>
+                                <p ref={pushElementToRef} className="last">Our integrated platform empowers you to manage payments effortlessly, reducing operational
+                                    costs and increasing revenue. By utilizing our comprehensive solution, you can streamline your financial
+                                    operations and enhance profitability, allowing you to concentrate on driving innovation and fostering
+                                    growth within your organization.</p>
+                                <button className="btn btn-white">View our documentation</button>
                             </div>
                             <div className="company-props-img">
                             </div>
@@ -374,8 +443,11 @@ const Homepage = () => {
                 <div className="hero-company-disp mt_5">
                     <div className="cover-div">
                         <div className="grid-2">
-                            <div>
-                                <h3>The Backbone for Global <br /> Digital Business.</h3>
+                            <div className="desktop-only">
+                                <h3>Why Business & Consumers <br /> love Payscribe?</h3>
+                            </div>
+                            <div className="mobile-only">
+                                <h3>The Backbone for Global Digital Business.</h3>
                             </div>
                             <div>
                                 <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
@@ -386,24 +458,27 @@ const Homepage = () => {
                         <div className="grid-3 mt_3">
                             <div className="block-border">
                                 <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Close to The Metal</h5>
-                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                    recharged millios of companies.</p>
+                                <h5>Payment Insights at Your Fingertips</h5>
+                                <p ref={pushElementToRef}>Get a complete view of your business performance with our intuitive dashboards and advanced analytics, providing
+                                    real-time visibility into every stage of the payment journey, from transactions to revenue tracking.</p>
                             </div>
                             <div className="block-border">
                                 <ion-icon name="calendar-outline"></ion-icon>
                                 <h5>Reliable 24/7 customer support</h5>
-                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                    recharged millios of companies.</p>
+                                <p ref={pushElementToRef}>Experience unwavering performance with Payscribe's robust infrastructure, boasting an impressive 99.95%
+                                    uptime and seamless scalability, ensuring our solutions adapt to your growing business needs, always.</p>
                             </div>
                             <div className="block-border">
                                 <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Close to The Metal</h5>
-                                <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                    financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                    recharged millios of companies.</p>
+                                <h5>Unified Payment Gateway</h5>
+                                <p ref={pushElementToRef}>Simplify your payment infrastructure with our single API integration, enabling seamless payment
+                                    processing across Nigeria and over 100 countries.</p>
+                            </div>
+                            <div className="block-border">
+                                <ion-icon name="calendar-outline"></ion-icon>
+                                <h5>Personalized Support, Always</h5>
+                                <p ref={pushElementToRef}>Experience tailored assistance with Payscribe's dedicated team of account managers, providing
+                                    expert technical support and personalized relationship management, ensuring you receive the help you need, when you need it</p>
                             </div>
                         </div>
                     </div>
@@ -416,9 +491,9 @@ const Homepage = () => {
                                     <div>
                                         <h5 className="top-tag">Global Scale</h5>
                                         <h3>Start Building Today</h3>
-                                        <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
-                                            financial processes, and grow revenue. No more panic. Send Payscribe the airtime you erroneously
-                                            recharged millios of companies.</p>
+                                        <p ref={pushElementToRef}>Sign up in seconds and start processing payments right away! Alternatively, our
+                                            experts are here to help you craft a tailored payment solution that perfectly suits your
+                                            business needs - just reach out to us!.</p>
                                         <div className="flex-div">
                                             <Link className="btn btn-accent" to="">Start Building <img src={ArrowRightMain} alt="arrow right" /></Link>
                                             <Link className="btn btn-gray-border" to="">Contact Sales <img src={ArrowRightGrayMain} alt="arrow right" /></Link>
