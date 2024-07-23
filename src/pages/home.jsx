@@ -318,7 +318,7 @@ const Homepage = () => {
                                 <h3>Your one-stop <br /> payment partner</h3>
                             </div>
                             <div className="mobile-only">
-                                <h3>Your one-stop payment partner</h3>
+                                <h3>Your one-stop <br /> payment partner</h3>
                             </div>
                             <div>
                                 <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
@@ -424,7 +424,7 @@ const Homepage = () => {
                                     <h3>Built by developers <br /> for developers</h3>
                                 </div>
                                 <div className="mobile-only">
-                                    <h3>Built by developers for developers</h3>
+                                    <h3>Built by developers <br /> for developers</h3>
                                 </div>
                                 <p ref={pushElementToRef}>We've simplified the complexity of integrating multiple services and payment methods, providing a single API to unify your
                                     financial ecosystem. Now, focus on building a scalable business and gain a competitive advantage in the marketF.</p>
@@ -447,7 +447,7 @@ const Homepage = () => {
                                 <h3>Why Business & Consumers <br /> love Payscribe?</h3>
                             </div>
                             <div className="mobile-only">
-                                <h3>The Backbone for Global Digital Business.</h3>
+                                <h3>The Backbone for <br /> Global Digital Business.</h3>
                             </div>
                             <div>
                                 <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
@@ -455,31 +455,49 @@ const Homepage = () => {
                                     recharged millios of companies.</p>
                             </div>
                         </div>
-                        <div className="grid-3 mt_3">
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Payment Insights at Your Fingertips</h5>
-                                <p ref={pushElementToRef}>Get a complete view of your business performance with our intuitive dashboards and advanced analytics, providing
-                                    real-time visibility into every stage of the payment journey, from transactions to revenue tracking.</p>
-                            </div>
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Reliable 24/7 customer support</h5>
-                                <p ref={pushElementToRef}>Experience unwavering performance with Payscribe's robust infrastructure, boasting an impressive 99.95%
-                                    uptime and seamless scalability, ensuring our solutions adapt to your growing business needs, always.</p>
-                            </div>
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Unified Payment Gateway</h5>
-                                <p ref={pushElementToRef}>Simplify your payment infrastructure with our single API integration, enabling seamless payment
-                                    processing across Nigeria and over 100 countries.</p>
-                            </div>
-                            <div className="block-border">
-                                <ion-icon name="calendar-outline"></ion-icon>
-                                <h5>Personalized Support, Always</h5>
-                                <p ref={pushElementToRef}>Experience tailored assistance with Payscribe's dedicated team of account managers, providing
-                                    expert technical support and personalized relationship management, ensuring you receive the help you need, when you need it</p>
-                            </div>
+                        <div className="grid- mt_3">
+                            <Swiper
+                                centeredSlides={false}
+                                // spaceBetween={50} slidesPerView={3.2}
+                                loop={false} breakpoints={breakpoints}>
+                                <SwiperSlide key={1}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>Payment Insights at Your Fingertips</h5>
+                                        <p ref={pushElementToRef}>Gain a comprehensive understanding of your business performance with our intuitive dashboards and advanced
+                                            analytics. Our platform offers real-time visibility into every stage of the payment journey, from
+                                            initial transactions to detailed revenue tracking</p>
+                                        {/* <p ref={pushElementToRef}>Get a complete view of your business performance with our intuitive dashboards and advanced analytics, providing
+                                            real-time visibility into every stage of the payment journey, from transactions to revenue tracking.</p> */}
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={2}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>Reliable 24/7 customer support</h5>
+                                        <p ref={pushElementToRef}>Experience unparalleled performance with Payscribe's robust infrastructure, designed to support your
+                                            business with exceptional reliability. Our system boasts an impressive 99.95% uptime, ensuring that
+                                            your operations run smoothly and without interruption. </p>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={3}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>Unified Payment Gateway</h5>
+                                        <p ref={pushElementToRef}>Simplify your payment infrastructure with our single API integration, designed to streamline your
+                                            payment processing capabilities effortlessly. With just one integration, you can enable seamless
+                                            payment transactions across Nigeria and worldwide. </p>
+                                    </div>
+                                </SwiperSlide>
+                                <SwiperSlide key={4}>
+                                    <div className="block-border">
+                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <h5>Personalized Support, Always</h5>
+                                        <p ref={pushElementToRef}>Experience tailored assistance with Payscribe's dedicated team of account managers, providing
+                                            expert technical support and personalized relationship management, ensuring you receive the help you need, when you need it</p>
+                                    </div>
+                                </SwiperSlide>
+                            </Swiper>
                         </div>
                     </div>
                 </div>
@@ -489,7 +507,7 @@ const Homepage = () => {
                             <div className="cover-div">
                                 <div className="grid-2-bias">
                                     <div>
-                                        <h5 className="top-tag">Global Scale</h5>
+                                        <h5 className="top-tag">Get Started</h5>
                                         <h3>Start Building Today</h3>
                                         <p ref={pushElementToRef}>Sign up in seconds and start processing payments right away! Alternatively, our
                                             experts are here to help you craft a tailored payment solution that perfectly suits your

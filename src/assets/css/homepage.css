@@ -912,10 +912,8 @@ a.main ion-icon {
     .hero-block-main {
         padding: 10px;
     }
-    
-    .hero-block-main h3 {
 
-    }
+    .hero-block-main h3 {}
 
     .hero-company-props {
         padding: 15% 0px;
@@ -934,10 +932,35 @@ a.main ion-icon {
 
     .hero-company-props p {
         width: 100%;
+        margin-bottom: 20px;
+        font-size: 1.3rem;
     }
 
+    .hero-company-disp h3,
     .hero-company-props h3 {
-        font-size: 3rem;
+        font-size: 2.2rem;
+        margin-bottom: 10px;
+    }
+
+    .products-card .products-card-body {
+        padding: 20px 10px 0px;
+    }
+
+    .hero-company-disp p {
+        margin-bottom: 10px;
+    }
+
+    .hero-company-props .grid-2-bias h5.top-tag {
+        font-size: 1.3rem;
+    }
+
+
+    .hero-company-props p.last {
+        margin-bottom: 30px !important;
+    }
+
+    .hero-company-disp .block-border h5 {
+        font-size: 1.8rem;
     }
 
     .hero-company-props .grid-3 {
