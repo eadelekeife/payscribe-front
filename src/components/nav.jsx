@@ -5,10 +5,11 @@ import Logo from "../assets/images/payscribe.png";
 import { Drawer, Dropdown } from "antd";
 
 import MenuIcon from "../assets/images/icons/menu.svg";
+import MenuBlackIcon from "../assets/images/icons/menu-black.svg";
 import Cancel from "../assets/images/icons/x.svg";
 import CancelWhite from "../assets/images/icons/x-white.svg";
 import AppRoutes from "../utils/routes";
-// import Logo from "../assets/images/logo.png";
+import LogoBlack from "../assets/images/logo.png";
 
 const Navigation = props => {
 
@@ -157,12 +158,16 @@ const Navigation = props => {
         <div className={`navigation ${fixedNav ? 'fixed' : ''} ${props?.pageFixedNav ? 'fixed' : ''}`}>
             <div className="nav-box">
                 <div className="inline-nav">
-                    <div className="div-logo">
-                        <img src={Logo} alt="logo" className="logo" />
-                        <h2 className="logo-title">Payscribe</h2>
-                        {/* <div className="logo-box"></div>
-                    <h3>PayScribe</h3> */}
-                    </div>
+                    {fixedNav ?
+                        <div className="div-logo">
+                            <img src={LogoBlack} alt="logo" className="logo" />
+                        </div>
+                        :
+                        <div className="div-logo">
+                            <img src={Logo} alt="logo" className="logo" />
+                            <h2 className="logo-title">Payscribe</h2>
+                        </div>
+                    }
                     <div className="desktop-only">
                         <ul>
                             <li>
@@ -219,7 +224,10 @@ const Navigation = props => {
                 </div>
                 <div className="mobile-only">
                     <div onClick={toggleMobileNavDisplay}>
-                        <img src={MenuIcon} alt="menu" />
+                        {fixedNav ?
+                            <img src={MenuBlackIcon} alt="menu" />
+                            : <img src={MenuIcon} alt="menu" />
+                        }
                     </div>
                 </div>
             </div>

@@ -37,6 +37,7 @@ import PhoneImg from "../assets/images/phone.png";
 import TrackExpense from "../components/track/track";
 
 import NoiseImg from "../assets/images/noise.jpg";
+import HomepageHero from "../assets/images/homepage_hero.svg";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -152,7 +153,8 @@ const Homepage = () => {
                                     </div>
                                 </div>
                                 <div>
-                                    <div className="hero-img">
+                                    <img src={HomepageHero} className="hero" alt="hero sect" />
+                                    {/* <div className="hero-img">
                                         <div>
                                             <div className="grid-3">
                                                 <div></div>
@@ -172,7 +174,7 @@ const Homepage = () => {
                                                 </div>
                                             </div>
                                         </div>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </div>
@@ -234,7 +236,7 @@ const Homepage = () => {
                                 <div className="img-box">
                                 </div>
                                 <h5 className="top-tag color">For Freelancers</h5>
-                                <h3>Simplify Your Finances, Amplify Your Success.</h3>
+                                <h3>Simplify Your Finances, <br /> Amplify Your Success.</h3>
                                 <div className="mobile-only">
                                     <p ref={pushElementToRef}>Seamlessly track your projects, payments, and expenses, and freeing up time to
                                         focus on growing your skills.</p>
@@ -249,11 +251,8 @@ const Homepage = () => {
                                 <div className="img-box">
                                 </div>
                                 <h5 className="top-tag white">For Your Business</h5>
-                                <div className="desktop-only">
+                                <div className="">
                                     <h3>Seemless Payment Integration, <br /> Boosted Sales.</h3>
-                                </div>
-                                <div className="mobile-only">
-                                    <h3>Seemless Payment Integration, Boosted Sales.</h3>
                                 </div>
                                 <div className="desktop-only">
                                     <p ref={pushElementToRef}>Payscribe's payment solutions integrate with your business, enabling fast, secure, <br /> and
@@ -276,7 +275,7 @@ const Homepage = () => {
                                     <h3>The Backbone for Global <br /> Digital Business.</h3>
                                 </div>
                                 <div className="mobile-only">
-                                    <h3>The Backbone for Global Digital Business.</h3>
+                                    <h3>The Backbone for <br /> Global Digital Business.</h3>
                                 </div>
                                 <p ref={pushElementToRef}>
                                     Payscribe offers a comprehensive payment platform that enables businesses of all sizes - from small ventures
@@ -314,11 +313,8 @@ const Homepage = () => {
                 <div className="hero-company-disp mt_5">
                     <div className="cover-div">
                         <div className="grid-2">
-                            <div className="desktop-only">
-                                <h3>Your one-stop <br /> payment partner</h3>
-                            </div>
-                            <div className="mobile-only">
-                                <h3>Your one-stop <br /> payment partner</h3>
+                            <div>
+                                <h3>Your one-stop <br /> payment partner.</h3>
                             </div>
                             <div>
                                 <p ref={pushElementToRef}>Millios of companies of all sizes use Payscribe online and in person to accept payments, send payouts, automate
@@ -507,7 +503,7 @@ const Homepage = () => {
                             <div className="cover-div">
                                 <div className="grid-2-bias">
                                     <div>
-                                        <h5 className="top-tag">Get Started</h5>
+                                        {/* <h5 className="top-tag">Get Started</h5> */}
                                         <h3>Start Building Today</h3>
                                         <p ref={pushElementToRef}>Sign up in seconds and start processing payments right away! Alternatively, our
                                             experts are here to help you craft a tailored payment solution that perfectly suits your
