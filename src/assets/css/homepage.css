@@ -2,8 +2,12 @@
     background: #EDF3F2;
     background: #0F2028;
     background: #000;
-    /* height: 90vh; */
     padding: 5% 0px;
+    /* background: url("../images/homepage/hero.jpg");
+    background-position: center top;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 450px; */
 }
 
 .homepage .homepage-hero .hero-content {
@@ -455,9 +459,12 @@ a.main ion-icon {
 
 .hero-company-props img.woman {
     height: auto;
-    width: 72%;
+    width: 100%;
+    height: 100%;
     margin: 0px auto;
     display: block;
+    border-radius: 16px;
+    margin-top: -40px;
 }
 
 .hero-company-props .company-props-img {
@@ -504,6 +511,12 @@ a.main ion-icon {
 
 .hero-company-disp .block-border.top {
     margin-top: -40px;
+}
+
+.hero-company-disp .block-border img {
+    height: 5rem;
+    width: auto;
+    margin-bottom: 30px;
 }
 
 
@@ -557,15 +570,15 @@ a.main ion-icon {
 .hero-props-main .grid-2 a {
     font-size: 1.4rem;
 }
-
+/* 
 .hero-props-main .img-box {
     height: 20rem;
-}
+} */
 
 
-.hero-props-main .hero-block-main.main-story .img-box {
+/* .hero-props-main .hero-block-main.main-story .img-box {
     height: 40rem;
-}
+} */
 
 .hero-props-main .hero-block-main.main-story .inner-grid {
     display: flex;
@@ -679,6 +692,7 @@ a.main ion-icon {
     position: absolute;
     width: auto;
     height: 40rem;
+    bottom: -50px;
     /* top: -10rem; */
 }
 
@@ -716,6 +730,15 @@ a.main ion-icon {
     width: 100%;
     border-radius: 16px;
     margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-block-main img.main-img {
+    width: 70%;
+    height: auto;
+    border-radius: 8px;
 }
 
 .grid-2-bias.sec-content .hero-block-main._dark {
@@ -773,7 +796,7 @@ a.main ion-icon {
     border: none;
 }
 
-.hero-block-main img {
+.hero-block-main img.ash {
     position: absolute;
     width: 100%;
     height: 100%;
@@ -821,6 +844,8 @@ a.main ion-icon {
     margin-bottom: 5px;
     font-size: 1.8rem;
 }
+
+
 
 @media screen and (max-width: 720px) {
     .homepage-hero .grid-2.main-grid {
@@ -1026,6 +1051,10 @@ a.main ion-icon {
         grid-gap: 0px;
     }
 
+    .grid-2-bias.top .hero-block-main {
+        height: unset;
+    }
+
     .hero-block-main .img-box {
         height: 20rem;
     }
@@ -1036,5 +1065,8 @@ a.main ion-icon {
 
     .join-us .cover-div {
         padding: 15px 20px;
+    }
+    .join-us .phone-block img {
+        display: none;
     }
 }

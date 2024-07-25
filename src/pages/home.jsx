@@ -22,7 +22,7 @@ import Img2 from "../assets/images/payscribe/_2.png";
 import Img3 from "../assets/images/payscribe/_3.png";
 import Img4 from "../assets/images/payscribe/_4.png";
 
-import WomanImg from "../assets/images/friends.jpg";
+// import WomanImg from "../assets/images/friends.jpg";
 
 
 import _1 from "../assets/images/payscribe/_1.svg";
@@ -32,12 +32,23 @@ import _4 from "../assets/images/payscribe/_4.svg";
 
 import _5 from "../assets/images/payscribe/jjd.webp";
 
-import PhoneImg from "../assets/images/phone.png";
+// import PhoneImg from "../assets/images/phone.png";
 
 import TrackExpense from "../components/track/track";
 
 import NoiseImg from "../assets/images/noise.jpg";
 import HomepageHero from "../assets/images/homepage_hero.svg";
+
+import Freelancer from "../assets/images/homepage/freelancer.png";
+import BusinessImg from "../assets/images/homepage/business.png";
+import WomanImg from "../assets/images/homepage/woman.png";
+import LastImg from "../assets/images/homepage/last.jpg";
+import PhoneImg from "../assets/images/homepage/phone.png";
+
+import PaymentImg from "../assets/images/homepage/card.jpg";
+import SupportImg from "../assets/images/homepage/support.jpg";
+import CustomerCareImg from "../assets/images/homepage/help.jpg";
+import SingleImg from "../assets/images/homepage/single.jpg";
 
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -188,7 +199,7 @@ const Homepage = () => {
                         </div>
                         <div className="grid-2-bias top">
                             <div className="hero-block-main main-story _dark">
-                                <img src={NoiseImg} alt="ash image" />
+                                <img src={NoiseImg} className="ash" alt="ash image" />
                                 <div className="">
                                     <div className="inner-grid">
                                         <div>
@@ -209,7 +220,7 @@ const Homepage = () => {
                                 </div>
                             </div>
                             <div className="hero-block-main main-story light">
-                                <img src={NoiseImg} alt="ash image" />
+                                <img src={NoiseImg} className="ash" alt="ash image" />
                                 <div className="">
                                     <div className="inner-grid">
                                         <div>
@@ -232,8 +243,9 @@ const Homepage = () => {
                         </div>
                         <div className="grid-2-bias sec-content mt_3">
                             <div className="hero-block-main light">
-                                <img src={NoiseImg} alt="ash image" />
+                                <img src={NoiseImg} className="ash" alt="ash image" />
                                 <div className="img-box">
+                                    <img src={Freelancer} className="main-img" alt="freelancer" />
                                 </div>
                                 <h5 className="top-tag color">For Freelancers</h5>
                                 <h3>Simplify Your Finances, <br /> Amplify Your Success.</h3>
@@ -247,8 +259,9 @@ const Homepage = () => {
                                 </div>
                             </div>
                             <div className="hero-block-main _dark">
-                                <img src={NoiseImg} alt="ash image" />
+                                <img src={NoiseImg} className="ash" alt="ash image" />
                                 <div className="img-box">
+                                    <img src={BusinessImg} className="main-img" alt="freelancer" />
                                 </div>
                                 <h5 className="top-tag white">For Your Business</h5>
                                 <div className="">
@@ -283,7 +296,8 @@ const Homepage = () => {
                                     transactions, unlocking new revenue streams and fueling growth.
                                 </p>
                                 <p ref={pushElementToRef}>Enjoy access to a wide range of tools and solutions tailored to
-                                    support you as your entrepreneurship journey.</p>
+                                    support you as your entrepreneurship journey. From comprehensive resources to innovative solutions, everything you need to navigate
+                                    and thrive in your business endeavors is at your fingertips.</p>
 
                                 <div className="grid-3 mt_3">
                                     <div className="comp-border">
@@ -300,13 +314,13 @@ const Homepage = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="company-props-img">
-                            </div>
-                            {/* <div>
+                            {/* <div className="company-props-img">
+                            </div> */}
                             <div>
-                                <img src={WomanImg} className="woman" alt="globe img" />
+                                <div>
+                                    <img src={WomanImg} className="woman" alt="globe img" />
+                                </div>
                             </div>
-                        </div> */}
                         </div>
                     </div>
                 </div>
@@ -430,7 +444,10 @@ const Homepage = () => {
                                     growth within your organization.</p>
                                 <button className="btn btn-white">View our documentation</button>
                             </div>
-                            <div className="company-props-img">
+                            {/* <div className="company-props-img"> */}
+                            <div className="">
+                                {/* <img src={LastImg} style={{ marginTop: 0 }} className="woman" alt="globe img" /> */}
+                                <img src={WomanImg} className="woman" alt="globe img" />
                             </div>
                             {/* <img src={WomanImg} className="woman" alt="globe img" /> */}
                         </div>
@@ -458,7 +475,7 @@ const Homepage = () => {
                                 loop={false} breakpoints={breakpoints}>
                                 <SwiperSlide key={1}>
                                     <div className="block-border">
-                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <img src={PaymentImg} alt="payment" />
                                         <h5>Payment Insights at Your Fingertips</h5>
                                         <p ref={pushElementToRef}>Gain a comprehensive understanding of your business performance with our intuitive dashboards and advanced
                                             analytics. Our platform offers real-time visibility into every stage of the payment journey, from
@@ -469,7 +486,7 @@ const Homepage = () => {
                                 </SwiperSlide>
                                 <SwiperSlide key={2}>
                                     <div className="block-border">
-                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <img src={CustomerCareImg} alt="payment" />
                                         <h5>Reliable 24/7 customer support</h5>
                                         <p ref={pushElementToRef}>Experience unparalleled performance with Payscribe's robust infrastructure, designed to support your
                                             business with exceptional reliability. Our system boasts an impressive 99.95% uptime, ensuring that
@@ -478,7 +495,7 @@ const Homepage = () => {
                                 </SwiperSlide>
                                 <SwiperSlide key={3}>
                                     <div className="block-border">
-                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <img src={SingleImg} alt="payment" />
                                         <h5>Unified Payment Gateway</h5>
                                         <p ref={pushElementToRef}>Simplify your payment infrastructure with our single API integration, designed to streamline your
                                             payment processing capabilities effortlessly. With just one integration, you can enable seamless
@@ -487,7 +504,7 @@ const Homepage = () => {
                                 </SwiperSlide>
                                 <SwiperSlide key={4}>
                                     <div className="block-border">
-                                        <ion-icon name="calendar-outline"></ion-icon>
+                                        <img src={SupportImg} alt="payment" />
                                         <h5>Personalized Support, Always</h5>
                                         <p ref={pushElementToRef}>Experience tailored assistance with Payscribe's dedicated team of account managers, providing
                                             expert technical support and personalized relationship management, ensuring you receive the help you need, when you need it</p>
@@ -513,6 +530,11 @@ const Homepage = () => {
                                             <Link className="btn btn-gray-border" to="">Contact Sales <img src={ArrowRightGrayMain} alt="arrow right" /></Link>
                                         </div>
                                     </div>
+                                    {/* <div>
+                                        <div>
+                                            <img src={PhoneImg} className="phone" alt="Phone" />
+                                        </div>
+                                    </div> */}
                                     <div>
                                         <div className="phone-block">
                                             <img src={PhoneImg} className="phone" alt="Phone" />
